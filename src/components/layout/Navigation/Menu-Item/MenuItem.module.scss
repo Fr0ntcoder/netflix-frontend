@@ -1,0 +1,22 @@
+.item {
+	display: block;
+}
+
+.link {
+	display: flex;
+	font-size: 14px;
+	align-items: center;
+	border-right: 8px solid transparent;
+	color: $color-gray-500;
+
+	&.active {
+		border-color: $color-primary;
+		color: #fff;
+	}
+
+	svg {
+		font-size: 25px;
+		margin-right: 10px;
+		color: $color-primary;
+	}
+}

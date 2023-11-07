@@ -1,5 +1,22 @@
 @import './other/normalize.css';
 
-body {
-	@include fade-in-animation(0.5s);
+input[type='file'],
+input[type='file']::-webkit-file-upload-button {
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+body,
+html {
+	font-family: $main-font;
+	background: $color-gray-900;
 }

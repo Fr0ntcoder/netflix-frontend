@@ -1,0 +1,20 @@
+.navigation {
+	position: relative;
+	height: 100%;
+	padding: 30px 0 30px 30px;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: '';
+		display: block;
+		width: 2px;
+		height: 100%;
+		background: $color-gray-800;
+	}
+}
+
+.logo {
+	margin-bottom: 50px;
+}
