@@ -1,3 +1,4 @@
 export enum EnumContstantsUrl {
-	GENRE = '/genres'
+	GENRE = '/genres',
+	MOVIE = '/movies'
 }

@@ -3,7 +3,7 @@ import { TGenre } from 'service/genre/genre.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
-export const GenreService = {
+export const genreService = {
 	async getAll() {
 		return await axiosDefault<TGenre[]>({
 			url: EnumContstantsUrl.GENRE,

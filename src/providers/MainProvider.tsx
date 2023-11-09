@@ -9,6 +9,10 @@ const queryClient = new QueryClient({
 	}
 })
 
+queryClient.invalidateQueries({
+	queryKey: ['movie']
+})
+
 const MainProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>

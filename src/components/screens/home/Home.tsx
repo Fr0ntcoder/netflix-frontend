@@ -8,7 +8,7 @@ type THome = {}
 const Home: FC<THome> = () => {
 	return (
 		<Meta title='Главная' description='Главная страница'>
-			<Layout>45545</Layout>
+			<Layout>5555</Layout>
 		</Meta>
 	)
 }

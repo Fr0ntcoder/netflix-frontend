@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query'
-import { GenreService } from 'service/genre/genreService'
+import { genreService } from 'service/genre/genre.service'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
 export const useGenreMenu = () => {
-	return useQuery(['genre menu'], () => GenreService.getAll(), {
+	return useQuery(['genre menu'], () => genreService.getAll(), {
 		select: genre =>
 			genre.data
 				.map(item => {
