@@ -3,12 +3,19 @@ import { TMovie } from 'service/movie/movie.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
-export const movieService = {
+export const MovieService = {
 	async getAll(searchTerm?: string) {
 		return axiosDefault<TMovie[]>({
-			url: EnumContstantsUrl.MOVIE,
+			url: EnumContstantsUrl.MOVIES,
 			method: 'GET',
 			params: searchTerm ? { searchTerm } : {}
+		})
+	},
+
+	async getMostPopular() {
+		return axiosDefault<TMovie[]>({
+			url: EnumContstantsUrl.MOVIES_POPULAR,
+			method: 'GET'
 		})
 	}
 }

@@ -1,0 +1,59 @@
+.movies {
+	display: block;
+}
+
+.title {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	color: #fff;
+}
+
+.list {
+	display: grid;
+	grid-row-gap: 15px;
+	margin-bottom: 15px;
+}
+
+.item {
+	display: flex;
+
+	img {
+		flex: none;
+		border-radius: 5px;
+	}
+
+	&__name {
+		font-size: 16px;
+		margin-bottom: 5px;
+		color: #fff;
+	}
+
+	&__genre {
+		font-size: 14px;
+		color: $color-gray-500;
+	}
+
+	&__rating {
+		display: flex;
+		font-size: 18px;
+		align-items: center;
+		margin-top: auto;
+
+		svg {
+			margin-right: 5px;
+			color: $color-yellow;
+		}
+
+		span {
+			font-weight: 600;
+			color: #fff;
+		}
+	}
+	&__content {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		padding-left: 15px;
+	}
+}

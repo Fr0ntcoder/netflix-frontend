@@ -1,5 +1,10 @@
+import HeadProvider from 'providers/HeadProvider'
+import ReduxToast from 'providers/ReduxToast'
 import { FC, PropsWithChildren } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
+
+import { store } from '@/store/store'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -15,7 +20,14 @@ queryClient.invalidateQueries({
 
 const MainProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+		<HeadProvider>
+			<Provider store={store}>
+				<ReduxToast />
+				<QueryClientProvider client={queryClient}>
+					{children}
+				</QueryClientProvider>
+			</Provider>
+		</HeadProvider>
 	)
 }
 

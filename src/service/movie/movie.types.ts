@@ -10,6 +10,7 @@ type TMovieParameters = {
 export type TMovie = {
 	_id: string
 	poster: string
+	rating: number
 	slug: string
 	bigPoster: string
 	title: string

@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 import MenuItem, {
 	TMenuItem
-} from '@/components/layout/Navigation/Menu-Item/MenuItem'
+} from '@/components/layout/Navigation/Menu/Menu-Item/MenuItem'
 
 import styles from './Menu.module.scss'
 

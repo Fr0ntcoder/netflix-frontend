@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 import { useQuery } from 'react-query'
-import { movieService } from 'service/movie/movie.service'
+import { MovieService } from 'service/movie/movie.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
@@ -10,7 +10,7 @@ export const useMovieSearch = () => {
 
 	const { isSuccess, data } = useQuery(
 		['movie', debouncedSearch],
-		() => movieService.getAll(debouncedSearch),
+		() => MovieService.getAll(debouncedSearch),
 		{
 			select: ({ data }) => data,
 			enabled: !!debouncedSearch
