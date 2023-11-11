@@ -16,12 +16,13 @@
 	"dependencies": {
 		"@reduxjs/toolkit": "^1.9.7",
 		"axios": "^1.6.0",
-		"clsx": "^2.0.0",
 		"framer-motion": "^10.16.4",
+		"js-cookie": "^3.0.5",
 		"next": "14.0.1",
 		"nextjs-progressbar": "^0.0.16",
 		"react": "^18",
 		"react-dom": "^18",
+		"react-hook-form": "^7.48.2",
 		"react-icons": "^4.11.0",
 		"react-loading-skeleton": "^3.3.1",
 		"react-query": "^3.39.3",
@@ -30,6 +31,7 @@
 	},
 	"devDependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.2.1",
+		"@types/js-cookie": "^3.0.6",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",

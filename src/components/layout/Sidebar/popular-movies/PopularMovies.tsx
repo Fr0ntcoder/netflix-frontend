@@ -1,9 +1,9 @@
-import clsx from 'clsx'
+import cn from 'classnames'
 import { FC } from 'react'
 
-import MoviesList from '@/components/layout/Sidebar/MoviesList/MoviesList'
-import MoviesLoader from '@/components/layout/Sidebar/MoviesLoader/MoviesLoader'
-import ErrorsLoader from '@/components/ui/errors/ErrorsLoader/ErrorsLoader'
+import MoviesList from '@/components/layout/sidebar/movies-list/MoviesList'
+import MoviesLoader from '@/components/layout/sidebar/movies-loader/MoviesLoader'
+import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
 import { useMoviesPopular } from '@/hooks/movie/useMoviesPopular'
 
@@ -22,7 +22,7 @@ const PopularMovies: FC<TPopularMovies> = ({ className }) => {
 	if (!movies || isError) return <ErrorsLoader />
 
 	return (
-		<div className={clsx(styles.popular, className)}>
+		<div className={cn(styles.popular, className)}>
 			<MoviesList title='Популярные фильмы' movies={movies} />
 		</div>
 	)

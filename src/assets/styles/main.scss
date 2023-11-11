@@ -11,6 +11,10 @@ input[type='file']::-webkit-file-upload-button {
 }
 
 input {
+	border: none;
+	background: none;
+	outline: none;
+
 	&:focus {
 		box-shadow: none;
 	}

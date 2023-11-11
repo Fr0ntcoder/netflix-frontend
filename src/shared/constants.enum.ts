@@ -1,4 +1,5 @@
 export enum EnumContstantsUrl {
+	AUTH = '/auth',
 	GENRES = '/genres',
 	MOVIES = '/movies',
 	MOVIES_POPULAR = '/movies/most-popular'

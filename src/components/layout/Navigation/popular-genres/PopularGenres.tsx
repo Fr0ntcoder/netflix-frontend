@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import Skeleton from 'react-loading-skeleton'
 
-import Menu from '@/components/layout/Navigation/Menu/Menu'
-import ErrorsLoader from '@/components/ui/errors/ErrorsLoader/ErrorsLoader'
+import Menu from '@/components/layout/navigation/menu/Menu'
+import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
 import { useGenreMenu } from '@/hooks/genre/useGenreMenu'
 

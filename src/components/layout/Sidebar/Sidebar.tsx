@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import FavoritesMovies from '@/components/layout/Sidebar/FavoritesMovies/FavoritesMovies'
-import PopularMovies from '@/components/layout/Sidebar/PopularMovies/PopularMovies'
-import Search from '@/components/layout/Sidebar/Search/Search'
+import FavoritesMovies from '@/components/layout/sidebar/favorites-movies/FavoritesMovies'
+import PopularMovies from '@/components/layout/sidebar/popular-movies/PopularMovies'
+import Search from '@/components/layout/sidebar/search/Search'
 
 import styles from './Sidebar.module.scss'
 

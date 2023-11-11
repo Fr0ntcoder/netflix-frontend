@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import cn from 'classnames'
 import { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 
 import styles from './Button.module.scss'
@@ -13,7 +13,7 @@ const Button: FC<IButton> = ({ variant, className, children, ...props }) => {
 	return (
 		<button
 			{...props}
-			className={clsx(styles.button, className, {
+			className={cn(styles.button, className, {
 				[styles.red]: variant === 'red',
 				[styles.yellow]: variant === 'yellow'
 			})}

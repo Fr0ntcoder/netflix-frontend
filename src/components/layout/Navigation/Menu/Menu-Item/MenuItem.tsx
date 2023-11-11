@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
@@ -21,7 +21,7 @@ const MenuItem: FC<{ item: TMenuItem }> = ({ item }) => {
 		<li className={styles.item}>
 			<Link
 				href={item.link}
-				className={clsx(styles.link, {
+				className={cn(styles.link, {
 					[styles.active]: asPath === item.link
 				})}
 			>

@@ -1,7 +1,7 @@
-import clsx from 'clsx'
+import cn from 'classnames'
 import { FC } from 'react'
 
-import SearchList from '@/components/layout/Sidebar/Search/SearchList/SearchList'
+import SearchList from '@/components/layout/sidebar/search/search-list/SearchList'
 import SearchField from '@/components/ui/fields/search-field/SearchField'
 
 import { useMovieSearch } from '@/hooks/movie/useMoviesSearch'
@@ -14,7 +14,7 @@ type TSearch = {
 const Search: FC<TSearch> = ({ className }) => {
 	const { isSuccess, data: movie, handleSearch, searchTerm } = useMovieSearch()
 	return (
-		<div className={clsx(styles.search, className)}>
+		<div className={cn(styles.search, className)}>
 			<SearchField searchTerm={searchTerm} handleSearch={handleSearch} />
 			{isSuccess && <SearchList movies={movie || []} />}
 		</div>

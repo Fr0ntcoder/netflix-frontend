@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 type TMeta = {
 	title: string
-	description: string
+	description?: string
 	children: React.ReactNode
 }
 const Meta: FC<TMeta> = ({ title, description, children }) => {

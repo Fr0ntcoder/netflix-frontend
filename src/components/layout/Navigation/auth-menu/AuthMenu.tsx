@@ -2,9 +2,9 @@ import { FC } from 'react'
 
 import Icon from '@/components/ui/icon/Icon'
 
-import styles from './Auth.module.scss'
+import styles from './AuthMenu.module.scss'
 
-export const Auth: FC = () => {
+export const AuthMenu: FC = () => {
 	return (
 		<div className={styles.auth}>
 			<h3 className={styles.title}>Общие</h3>
