@@ -1,9 +1,13 @@
 import { FC } from 'react'
 
-import Layout from '@/components/layout/Layout'
+import Meta from '@/components/ui/meta/Meta'
 
 const Trending: FC = () => {
-	return <Layout>Trending</Layout>
+	return (
+		<Meta title='Актуальные сейчас' description=''>
+			<div></div>
+		</Meta>
+	)
 }
 
 export default Trending

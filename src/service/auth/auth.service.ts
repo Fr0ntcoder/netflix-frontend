@@ -1,5 +1,5 @@
-import { axiosDefault } from 'config/api.config'
-import { getContentType } from 'config/api.helpers'
+import { axiosDefault } from 'api/api.config'
+import { getContentType } from 'api/api.helpers'
 import Cookies from 'js-cookie'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
@@ -17,7 +17,7 @@ export const AuthService = {
 
 		if (response.data.accessToken) saveToLocalStorage(response.data)
 
-		return response.data
+		return response
 	},
 
 	async login(email: string, password: string) {
@@ -28,7 +28,7 @@ export const AuthService = {
 		})
 		if (response.data.accessToken) saveToLocalStorage(response.data)
 
-		return response.data
+		return response
 	},
 
 	async getNewTokens() {
@@ -42,7 +42,7 @@ export const AuthService = {
 
 		if (response.data.accessToken) saveToLocalStorage(response.data)
 
-		return response.data
+		return response
 	},
 
 	async logout() {

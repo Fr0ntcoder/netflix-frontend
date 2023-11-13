@@ -1,9 +1,13 @@
 import { FC } from 'react'
 
-import Layout from '@/components/layout/Layout'
+import Meta from '@/components/ui/meta/Meta'
 
 const Genres: FC = () => {
-	return <Layout>Genres</Layout>
+	return (
+		<Meta title='Жанры' description=''>
+			<div></div>
+		</Meta>
+	)
 }
 
 export default Genres

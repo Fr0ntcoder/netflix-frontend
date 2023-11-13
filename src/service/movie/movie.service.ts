@@ -1,4 +1,4 @@
-import { axiosDefault } from 'config/api.config'
+import { axiosDefault } from 'api/api.config'
 import { TMovie } from 'service/movie/movie.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'

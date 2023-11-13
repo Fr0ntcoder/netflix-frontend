@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { errorCatch } from 'config/api.helpers'
+import { errorCatch } from 'api/api.helpers'
 import { toastr } from 'react-redux-toastr'
 import { AuthService } from 'service/auth/auth.service'
 
@@ -16,7 +16,7 @@ export const register = createAsyncThunk<TAuthReponse, TAuthData>(
 			const response = await AuthService.register(email, password)
 			toastr.success('Registration', 'Регистрация прошла успешно!')
 
-			return response
+			return response.data
 		} catch (error) {
 			toastError(error)
 
@@ -31,7 +31,7 @@ export const login = createAsyncThunk<TAuthReponse, TAuthData>(
 		try {
 			const response = await AuthService.login(email, password)
 			toastr.success('Login', 'Вы успешно вошли!')
-			return response
+			return response.data
 		} catch (error) {
 			/* console.log(error) */
 			toastError(error)
@@ -48,13 +48,13 @@ export const logout = createAsyncThunk(
 	}
 )
 
-export const checkAuth = createAsyncThunk<TAuthReponse, TAuthData>(
+export const checkAuth = createAsyncThunk<TAuthReponse>(
 	`${EnumContstantsUrl.AUTH}/check-auth`,
 	async (_, thunkApi) => {
 		try {
 			const response = await AuthService.getNewTokens()
 
-			return response
+			return response.data
 		} catch (error) {
 			if (errorCatch(error) === 'jwt expired') {
 				toastr.error(

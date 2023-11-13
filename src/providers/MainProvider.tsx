@@ -1,8 +1,13 @@
+import AuthProvider from 'providers/AuthProvider/AuthProvider'
 import HeadProvider from 'providers/HeadProvider'
 import ReduxToast from 'providers/ReduxToast'
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
+
+import Layout from '@/components/layout/Layout'
+
+import { TypeComponentAuthField } from '@/shared/types/auth.types'
 
 import { store } from '@/store/store'
 
@@ -14,17 +19,15 @@ const queryClient = new QueryClient({
 	}
 })
 
-queryClient.invalidateQueries({
-	queryKey: ['movie']
-})
-
-const MainProvider: FC<PropsWithChildren> = ({ children }) => {
+const MainProvider: FC<TypeComponentAuthField> = ({ children, Component }) => {
 	return (
 		<HeadProvider>
 			<Provider store={store}>
-				<ReduxToast />
 				<QueryClientProvider client={queryClient}>
-					{children}
+					<ReduxToast />
+					<AuthProvider Component={Component}>
+						<Layout>{children}</Layout>
+					</AuthProvider>
 				</QueryClientProvider>
 			</Provider>
 		</HeadProvider>

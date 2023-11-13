@@ -16,8 +16,19 @@
 	font-size: 14px;
 	color: $color-gray-500;
 
+	&.active {
+		color: #fff;
+		svg {
+			color: $color-primary;
+		}
+	}
 	svg {
 		font-size: 25px;
 		margin-right: 10px;
 	}
+}
+
+.wrap {
+	display: grid;
+	grid-row-gap: 15px;
 }

@@ -1,4 +1,4 @@
-import { axiosDefault } from 'config/api.config'
+import { axiosDefault } from 'api/api.config'
 import { TGenre } from 'service/genre/genre.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'

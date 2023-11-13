@@ -1,9 +1,13 @@
 import { FC } from 'react'
 
-import Layout from '@/components/layout/Layout'
+import Meta from '@/components/ui/meta/Meta'
 
 const Fresh: FC = () => {
-	return <Layout>Fresh</Layout>
+	return (
+		<Meta title='Свежие фильмы' description=''>
+			<div></div>
+		</Meta>
+	)
 }
 
 export default Fresh

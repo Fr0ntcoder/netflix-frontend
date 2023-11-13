@@ -20,6 +20,12 @@ input {
 	}
 }
 
+button {
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
 body,
 html {
 	font-family: $main-font;

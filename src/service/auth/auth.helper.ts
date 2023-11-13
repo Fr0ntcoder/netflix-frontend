@@ -9,7 +9,7 @@ export const saveTokensStorage = (data: TTokens) => {
 
 export const saveToLocalStorage = (data: TAuthReponse) => {
 	saveTokensStorage(data)
-	localStorage.setItem('user', JSON.stringify(data))
+	localStorage.setItem('user', JSON.stringify(data.user))
 }
 
 export const removeTokensStorage = () => {
