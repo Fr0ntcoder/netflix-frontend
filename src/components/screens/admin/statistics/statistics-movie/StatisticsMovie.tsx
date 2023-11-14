@@ -40,7 +40,7 @@ const StatisticsMovie: FC = () => {
 					src={data[0].bigPoster}
 					layout='fill'
 					objectFit='cover'
-					objectPosition='left top'
+					objectPosition='center'
 					draggable={false}
 					alt={data[0].title}
 				/>

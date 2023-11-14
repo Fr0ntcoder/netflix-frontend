@@ -1,0 +1,10 @@
+.column {
+	width: 25%;
+	padding-right: 15px;
+	color: #fff;
+
+	&:last-child {
+		text-align: right;
+		padding-right: 0;
+	}
+}

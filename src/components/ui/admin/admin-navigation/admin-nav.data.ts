@@ -1,4 +1,4 @@
-import { TAdminNavItem } from '@/components/ui/admin-navigation/admin.nav.types'
+import { TAdminNavItem } from '@/components/ui/admin/admin-navigation/admin.nav.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 

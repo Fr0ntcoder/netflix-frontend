@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import { AdminDataNav } from '@/components/ui/admin-navigation/admin-nav.data'
-import AdminNavigationItem from '@/components/ui/admin-navigation/admin-navigation-item/AdminNavigationItem'
+import { AdminDataNav } from '@/components/ui/admin/admin-navigation/admin-nav.data'
+import AdminNavigationItem from '@/components/ui/admin/admin-navigation/admin-navigation-item/AdminNavigationItem'
 
 import styles from './AdminNavigation.module.scss'
 
