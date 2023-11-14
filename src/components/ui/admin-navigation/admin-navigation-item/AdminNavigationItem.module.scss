@@ -1,0 +1,11 @@
+.item {
+	display: block;
+	padding-bottom: 25px;
+	border-bottom: 2px solid transparent;
+	color: $color-gray-500;
+
+	&.active {
+		border-color: $color-primary;
+		color: #fff;
+	}
+}

@@ -4,15 +4,13 @@ import Statistics from '@/components/screens/admin/statistics/Statistics'
 import AdminNavigation from '@/components/ui/admin-navigation/AdminNavigation'
 import Meta from '@/components/ui/meta/Meta'
 
-import { IClass } from '@/shared/interface/classname.interface'
-
-const Admin: FC<IClass> = () => {
+const Movies: FC = () => {
 	return (
-		<Meta title='Администратор - статистика'>
+		<Meta title='Администратор - фильмы'>
 			<AdminNavigation />
 			<Statistics />
 		</Meta>
 	)
 }
 
-export default Admin
+export default Movies

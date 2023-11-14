@@ -5,15 +5,16 @@ import MenuItem, {
 	TMenuItem
 } from '@/components/layout/navigation/menu/menu-item/MenuItem'
 
+import { IClass } from '@/shared/interface/classname.interface'
+
 import styles from './Menu.module.scss'
 
 export type TMenu = {
 	title: string
 	items: TMenuItem[]
-	className?: string
 }
 
-const Menu: FC<TMenu> = ({ title, items, className }) => {
+const Menu: FC<TMenu & IClass> = ({ title, items, className }) => {
 	const list = items.map(item => <MenuItem key={item.link} item={item} />)
 	return (
 		<div className={cn(styles.menu, className)}>

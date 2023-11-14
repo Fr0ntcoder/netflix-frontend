@@ -1,22 +1,22 @@
 import cn from 'classnames'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import MoviesList from '@/components/layout/sidebar/movies-list/MoviesList'
 import MoviesLoader from '@/components/layout/sidebar/movies-loader/MoviesLoader'
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
+import { useAuth } from '@/hooks/auth/useAuth'
 import { useMoviesPopular } from '@/hooks/movie/useMoviesPopular'
+
+import { IClass } from '@/shared/interface/classname.interface'
 
 import styles from './FavoritesMovies.module.scss'
 
-type TFavoritesMovies = {
-	className?: string
-}
-const FavoritesMovies: FC<TFavoritesMovies> = ({ className }) => {
-	const [isAuth, setIsAuth] = useState(false)
+const FavoritesMovies: FC<IClass> = ({ className }) => {
+	const { user } = useAuth()
 	const { data: movies, isLoading, isError } = useMoviesPopular()
 
-	if (!isAuth) {
+	if (!user) {
 		return (
 			<div className={styles.empty}>
 				Для просмотра избранных фильмов,вы должны авторизоваться

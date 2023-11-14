@@ -4,9 +4,7 @@ import Meta from '@/components/ui/meta/Meta'
 
 import styles from './Home.module.scss'
 
-type THome = {}
-
-const Home: FC<THome> = () => {
+const Home: FC = () => {
 	return (
 		<Meta title='Главная' description='Главная страница'>
 			<div className={styles.home}>Home</div>

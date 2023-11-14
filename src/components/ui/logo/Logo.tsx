@@ -4,12 +4,11 @@ import { FC } from 'react'
 
 import Icon from '@/components/ui/icon/Icon'
 
+import { IClass } from '@/shared/interface/classname.interface'
+
 import styles from './Logo.module.scss'
 
-type TLogo = {
-	className?: string
-}
-const Logo: FC<TLogo> = ({ className }) => {
+const Logo: FC<IClass> = ({ className }) => {
 	return (
 		<Link href='/' className={cn(styles.logo, className)}>
 			<Icon name='MdMovieCreation' />

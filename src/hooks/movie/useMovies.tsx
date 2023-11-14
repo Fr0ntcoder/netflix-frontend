@@ -4,11 +4,11 @@ import { MovieService } from 'service/movie/movie.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-export const useMovieSearch = () => {
+export const useMovie = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
 
-	const { isSuccess, data } = useQuery(
+	const queryData = useQuery(
 		['movie', debouncedSearch],
 		() => MovieService.getAll(debouncedSearch),
 		{
@@ -21,5 +21,5 @@ export const useMovieSearch = () => {
 		setSearchTerm(e.target.value)
 	}
 
-	return { isSuccess, handleSearch, data, searchTerm }
+	return { ...queryData, handleSearch, searchTerm }
 }

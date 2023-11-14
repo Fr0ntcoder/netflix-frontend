@@ -6,13 +6,13 @@ import Meta from '@/components/ui/meta/Meta'
 
 import { IClass } from '@/shared/interface/classname.interface'
 
-const Admin: FC<IClass> = () => {
+const Users: FC<IClass> = ({ className }) => {
 	return (
-		<Meta title='Администратор - статистика'>
+		<Meta title='Администратор - пользователи'>
 			<AdminNavigation />
 			<Statistics />
 		</Meta>
 	)
 }
 
-export default Admin
+export default Users

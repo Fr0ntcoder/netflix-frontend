@@ -4,12 +4,12 @@ import Skeleton from 'react-loading-skeleton'
 import Menu from '@/components/layout/navigation/menu/Menu'
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
-import { useGenreMenu } from '@/hooks/genre/useGenreMenu'
+import { useGenre } from '@/hooks/genre/useGenreMenu'
 
 import styles from './PopularGenres.module.scss'
 
 const PopularGenres: FC = () => {
-	const { data, isLoading, isError } = useGenreMenu()
+	const { data, isLoading, isError } = useGenre()
 
 	if (isLoading) {
 		return (

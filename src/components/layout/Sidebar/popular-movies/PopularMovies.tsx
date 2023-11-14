@@ -7,13 +7,12 @@ import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
 import { useMoviesPopular } from '@/hooks/movie/useMoviesPopular'
 
+import { IClass } from '@/shared/interface/classname.interface'
+
 import styles from './PopularMovies.module.scss'
 
-type TPopularMovies = {
-	className?: string
-}
-const PopularMovies: FC<TPopularMovies> = ({ className }) => {
-	const { data: movies, isLoading, isError } = useMoviesPopular()
+const PopularMovies: FC<IClass> = ({ className }) => {
+	const { data: movies, isLoading, isError } = useMoviesPopular(4)
 
 	if (isLoading) {
 		return <MoviesLoader movies={movies} />
