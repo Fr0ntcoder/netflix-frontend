@@ -4,12 +4,20 @@ import Skeleton from 'react-loading-skeleton'
 import Menu from '@/components/layout/navigation/menu/Menu'
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
-import { useGenre } from '@/hooks/genre/useGenreMenu'
+import { useGenres } from '@/hooks/genre/useGenres'
 
 import styles from './PopularGenres.module.scss'
 
 const PopularGenres: FC = () => {
-	const { data, isLoading, isError } = useGenre()
+	const { data, isLoading, isError } = useGenres()
+	const modifData = data
+		?.map(item => ({
+			name: item.name,
+			icon: item.icon,
+			text: item.name,
+			link: item.slug
+		}))
+		.slice(0, 4)
 
 	if (isLoading) {
 		return (
@@ -25,7 +33,13 @@ const PopularGenres: FC = () => {
 
 	if (!data || isError) return <ErrorsLoader />
 
-	return <Menu title='Популярные жанры' items={data} className={styles.menu} />
+	return (
+		<Menu
+			title='Популярные жанры'
+			items={modifData || []}
+			className={styles.menu}
+		/>
+	)
 }
 
 export default PopularGenres

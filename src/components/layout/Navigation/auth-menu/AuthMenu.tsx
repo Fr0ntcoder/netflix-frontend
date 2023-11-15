@@ -13,7 +13,11 @@ import styles from './AuthMenu.module.scss'
 const AuthMenu: FC = () => {
 	const { user } = useAuth()
 	const { logout } = useActions()
-	const { pathname } = useRouter()
+	const { pathname, push } = useRouter()
+	const onHandler = () => {
+		push('/')
+		logout()
+	}
 	return (
 		<div className={styles.auth}>
 			<h3 className={styles.title}>Общие</h3>
@@ -33,7 +37,7 @@ const AuthMenu: FC = () => {
 						<Icon name='MdAccountCircle' />
 						Профиль
 					</Link>
-					<button className={styles.status} onClick={logout}>
+					<button className={styles.status} onClick={onHandler}>
 						<Icon name='MdExitToApp' />
 						Выйти
 					</button>

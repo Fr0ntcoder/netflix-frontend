@@ -9,13 +9,14 @@ import styles from './AdminTableActions.module.scss'
 
 type TAdminTableActions = {
 	id: string
+	link: string
 }
 
-const AdminTableActions: FC<TAdminTableActions> = ({ id }) => {
+const AdminTableActions: FC<TAdminTableActions> = ({ id, link }) => {
 	const { deleteAsync } = useUsers()
 	return (
 		<div className={styles.actions}>
-			<Link href='/' className={styles.btn}>
+			<Link href={link} className={styles.btn}>
 				<Icon name='MdCreate' />
 			</Link>
 			<button className={styles.btn} onClick={() => deleteAsync(id)}>

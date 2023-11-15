@@ -10,6 +10,7 @@ import { TypeMaterialIcon } from '@/shared/icons/icon.type'
 import styles from './MenuItem.module.scss'
 
 export type TMenuItem = {
+	name: string
 	icon: TypeMaterialIcon
 	text: string
 	link: string

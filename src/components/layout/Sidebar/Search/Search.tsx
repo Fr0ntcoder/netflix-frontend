@@ -4,7 +4,7 @@ import { FC } from 'react'
 import SearchList from '@/components/layout/sidebar/search/search-list/SearchList'
 import SearchField from '@/components/ui/fields/search-field/SearchField'
 
-import { useMovie } from '@/hooks/movie/useMovies'
+import { useMovies } from '@/hooks/movie/useMovies'
 
 import styles from './Search.module.scss'
 
@@ -12,11 +12,17 @@ type TSearch = {
 	className?: string
 }
 const Search: FC<TSearch> = ({ className }) => {
-	const { isSuccess, data: movie, handleSearch, searchTerm } = useMovie()
+	const {
+		isSuccess,
+		data: movie,
+		handleSearch,
+		searchTerm,
+		debouncedSearch
+	} = useMovies()
 	return (
 		<div className={cn(styles.search, className)}>
 			<SearchField searchTerm={searchTerm} handleSearch={handleSearch} />
-			{isSuccess && <SearchList movies={movie || []} />}
+			{isSuccess && debouncedSearch && <SearchList movies={movie || []} />}
 		</div>
 	)
 }

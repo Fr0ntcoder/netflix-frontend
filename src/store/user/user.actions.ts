@@ -33,7 +33,6 @@ export const login = createAsyncThunk<TAuthReponse, TAuthData>(
 			toastr.success('Login', 'Вы успешно вошли!')
 			return response.data
 		} catch (error) {
-			/* console.log(error) */
 			toastError(error)
 
 			return thunkApi.rejectWithValue(error)

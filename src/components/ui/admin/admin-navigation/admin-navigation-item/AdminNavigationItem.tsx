@@ -5,20 +5,16 @@ import { FC } from 'react'
 
 import { TAdminNavItem } from '@/components/ui/admin/admin-navigation/admin.nav.types'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
-
 import styles from './AdminNavigationItem.module.scss'
 
 const AdminNavigationItem: FC<{ item: TAdminNavItem }> = ({ item }) => {
 	const { asPath } = useRouter()
-	const url = `${EnumContstantsUrl.ADMIN}${item.link}`
-	const result = asPath === '' ? item.link : url
 
 	return (
 		<Link
-			href={url}
+			href={item.link}
 			className={cn(styles.item, {
-				[styles.active]: item.link === asPath || result === asPath
+				[styles.active]: item.link === asPath || item.link === asPath
 			})}
 		>
 			{item.text}

@@ -1,9 +1,5 @@
-import { NextPage } from 'next'
+import Meta from '@/components/ui/meta/Meta'
 
-import Error404 from '@/components/screens/404/Error404'
-
-const ErrorPage404: NextPage = () => {
-	return <Error404 />
+export default function Error404() {
+	return <Meta title='Page not found'>Страница не найдена</Meta>
 }
-
-export default ErrorPage404

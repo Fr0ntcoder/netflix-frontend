@@ -2,15 +2,15 @@ import { FC } from 'react'
 
 import AdminTableRow from '@/components/ui/admin/admin-table/admin-table-row/AdminTableRow'
 
-import { TTableItem } from '@/shared/types/table.types'
+import { TSearch } from '@/shared/types/search.types'
 
 import styles from './AdminTableBody.module.scss'
 
 type TAdminTableBody = {
-	items: TTableItem[]
+	items: TSearch[]
 }
 const AdminTableBody: FC<TAdminTableBody> = ({ items }) => {
-	const list = items.map(item => <AdminTableRow item={item} />)
+	const list = items.map(item => <AdminTableRow item={item} key={item._id} />)
 	return <div className={styles.body}>{list}</div>
 }
 

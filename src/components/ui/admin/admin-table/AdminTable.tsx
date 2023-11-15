@@ -1,24 +1,40 @@
 import { FC } from 'react'
+import Skeleton from 'react-loading-skeleton'
 
 import AdminTableBody from '@/components/ui/admin/admin-table/admin-table-body/AdminTableBody'
 import AdminTableHeader from '@/components/ui/admin/admin-table/admin-table-header/AdminTableHeader'
 
-import { TTableItem } from '@/shared/types/table.types'
+import { TSearch } from '@/shared/types/search.types'
 
 import styles from './AdminTable.module.scss'
 
 type TAdminTable = {
 	itemsHeader: string[]
-	items: TTableItem[]
+	items: TSearch[]
+	isLoading: boolean
+	notFoundText: string
 }
-const AdminTable: FC<TAdminTable> = ({ itemsHeader, items }) => {
+const AdminTable: FC<TAdminTable> = ({
+	itemsHeader,
+	items,
+	isLoading,
+	notFoundText
+}) => {
 	return (
 		<div className={styles.table}>
 			<AdminTableHeader items={itemsHeader} className={styles.header} />
-			{items.length !== 0 ? (
+			{isLoading ? (
+				<Skeleton
+					count={1}
+					baseColor='#202020'
+					highlightColor='#444'
+					width='100%'
+					height={64}
+				/>
+			) : items.length !== 0 ? (
 				<AdminTableBody items={items} />
 			) : (
-				<span className={styles.empty}>Пользователи не найдены</span>
+				<span className={styles.empty}>{notFoundText}</span>
 			)}
 		</div>
 	)

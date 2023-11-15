@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
-import styles from './Empty.module.scss'
+import styles from './NotFound.module.scss'
 
-const Empty: FC = () => {
+const NotFound: FC = () => {
 	return <div className={styles.empty}>Не найдено!</div>
 }
 
-export default Empty
+export default NotFound

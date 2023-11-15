@@ -1,4 +1,4 @@
-import { axiosDefault } from 'api/api.config'
+import axiosInstance, { axiosDefault } from 'api/api.config'
 import { TMovie } from 'service/movie/movie.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
@@ -16,6 +16,14 @@ export const MovieService = {
 		return axiosDefault<TMovie[]>({
 			url: EnumContstantsUrl.MOVIES_POPULAR,
 			method: 'GET'
+		})
+	},
+
+	async delete(id: string) {
+		return axiosInstance<TMovie[]>({
+			url: `${EnumContstantsUrl.MOVIES}/${id}`,
+			method: 'DELETE',
+			params: { id }
 		})
 	}
 }

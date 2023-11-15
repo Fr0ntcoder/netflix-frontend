@@ -1,20 +1,19 @@
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { UsersService } from 'service/users/users.service'
+import { GenreService } from 'service/genre/genre.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-export const useUsers = () => {
+export const useGenres = () => {
 	const queryClient = useQueryClient()
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
 
 	const queryData = useQuery(
-		['users', debouncedSearch],
-		() => UsersService.getAll(debouncedSearch),
+		['genres', debouncedSearch],
+		() => GenreService.getAll(debouncedSearch),
 		{
 			select: ({ data }) => data
-			/* enabled: !!debouncedSearch */
 		}
 	)
 
@@ -23,11 +22,11 @@ export const useUsers = () => {
 	}
 
 	const { mutateAsync: deleteAsync } = useMutation(
-		['delete users'],
-		(id: string) => UsersService.delete(id),
+		['delete genres'],
+		(id: string) => GenreService.delete(id),
 		{
 			onSuccess: () => {
-				queryClient.invalidateQueries('users')
+				queryClient.invalidateQueries('genres')
 			}
 		}
 	)
