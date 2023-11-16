@@ -18,25 +18,22 @@ export const GenreService = {
 		})
 	},
 	async getById(id: string) {
-		return await axiosDefault<TGenreEditInput>({
+		return await axiosInstance<TGenreEditInput>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
-			method: 'GET',
-			params: { id }
+			method: 'GET'
 		})
 	},
 	async delete(id: string) {
 		return axiosInstance<string>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
-			method: 'DELETE',
-			params: { id }
+			method: 'DELETE'
 		})
 	},
 	async update(id: string, data: TGenreEditInput) {
-		return axiosInstance<string>({
+		return axiosInstance<TGenreEditInput>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
 			method: 'PUT',
-			params: { id },
-			data: { data }
+			data: { ...data }
 		})
 	}
 }

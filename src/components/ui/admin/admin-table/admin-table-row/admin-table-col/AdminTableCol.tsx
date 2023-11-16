@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { clearText } from '@/utils/string/clear-text'
+
 import styles from './AdminTableCol.module.scss'
 
 type TAdminTableCol = {
@@ -7,7 +9,7 @@ type TAdminTableCol = {
 }
 
 const AdminTableCol: FC<TAdminTableCol> = ({ text }) => {
-	return <div className={styles.column}>{text}</div>
+	return <div className={styles.column}>{clearText(text)}</div>
 }
 
 export default AdminTableCol

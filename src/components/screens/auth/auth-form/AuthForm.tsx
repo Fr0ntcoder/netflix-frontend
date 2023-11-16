@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '@/components/ui/button/Button'
-import InputField from '@/components/ui/fields/input-field/InputField'
+import InputField from '@/components/ui/form-elements/input-field/InputField'
 
 import { useActions } from '@/hooks/other/useActions'
 

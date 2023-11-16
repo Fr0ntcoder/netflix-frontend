@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import UsersSearch from '@/components/screens/admin/users/users-search/UsersSearch'
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
 import AdminTable from '@/components/ui/admin/admin-table/AdminTable'
+import SearchField from '@/components/ui/form-elements/search-field/SearchField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
@@ -25,7 +25,7 @@ const Users: FC = () => {
 		<Meta title='Администратор - пользователи'>
 			<AdminNavigation />
 			<Heading variant='h2' title='Пользователи' className={styles.title} />
-			<UsersSearch
+			<SearchField
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
 				className={styles.search}

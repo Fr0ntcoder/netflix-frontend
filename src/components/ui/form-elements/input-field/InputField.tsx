@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { forwardRef } from 'react'
 
-import { IField } from '@/components/ui/fields/input-field/input.types'
+import { IField } from '@/components/ui/form-elements/input-field/input.types'
 
 import styles from './InputField.module.scss'
 

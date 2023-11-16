@@ -9,6 +9,6 @@ export type TGenre = {
 	createdAt: string
 }
 
-export type TGenreMenu = Omit<TGenre, '_id' | 'createdAt'>
+export type TGenreEditInput = Omit<TGenre, '_id' | 'createdAt'>
 
-export type TGenreEditInput = Omit<TGenre, '_id'>
+/* export type TGenreEditInput = Omit<TGenre, '_id'> */

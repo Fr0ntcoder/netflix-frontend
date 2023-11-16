@@ -1,44 +1,44 @@
 import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
+import { toastr } from 'react-redux-toastr'
 import { GenreService } from 'service/genre/genre.service'
 import { TGenreEditInput } from 'service/genre/genre.types'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
 import { getKeys } from '@/utils/object/get-keys'
-
-import { toastError } from './../../utils/toast-error'
+import { toastError } from '@/utils/toast-error'
 
 export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
-	const { push, query } = useRouter()
+	const { query, push } = useRouter()
+
 	const genreId = String(query.id)
 
 	const { isLoading } = useQuery(
-		['genre edit', genreId],
+		['genre', genreId],
 		() => GenreService.getById(genreId),
 		{
-			onSuccess: ({ data }) => {
+			onSuccess({ data }) {
 				getKeys(data).forEach(key => {
 					setValue(key, data[key])
 				})
 			},
 			onError(error) {
-				toastError(error, 'Ошибка получение жанра')
-			},
-			enabled: !!query.id
+				toastError(error, 'Get genre')
+			}
 		}
 	)
 
 	const { mutateAsync } = useMutation(
-		['genre update'],
+		['update genre'],
 		(data: TGenreEditInput) => GenreService.update(genreId, data),
 		{
 			onError(error) {
-				toastError(error, 'Обновите жанр')
+				toastError(error, 'Ошибка обновления')
 			},
-			onSuccess(error) {
-				toastError(error, 'Вы обновили жанр')
+			onSuccess() {
+				toastr.success('Update genre', 'Вы успешно изменили жанр фильма')
 				push(EnumContstantsAdminUrl.GENRES)
 			}
 		}
@@ -48,8 +48,5 @@ export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
 		await mutateAsync(data)
 	}
 
-	return {
-		onSubmit,
-		isLoading
-	}
+	return { isLoading, onSubmit }
 }

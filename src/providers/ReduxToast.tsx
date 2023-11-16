@@ -9,7 +9,7 @@ const ReduxToast: FC = () => {
 			preventDuplicates
 			transitionIn='fadeIn'
 			transitionOut='fadeOut'
-			closeOnToastrClick
+			progressBar
 		/>
 	)
 }

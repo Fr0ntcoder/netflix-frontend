@@ -9,7 +9,9 @@ import Logo from '@/components/ui/logo/Logo'
 
 import styles from './Navigation.module.scss'
 
-const AuthMenu = dynamic(() => import('./auth-menu/AuthMenu'), { ssr: false })
+const DynamicAuthMenu = dynamic(() => import('./auth-menu/AuthMenu'), {
+	ssr: false
+})
 
 const Navigation: FC = () => {
 	return (
@@ -17,7 +19,7 @@ const Navigation: FC = () => {
 			<Logo className={styles.logo} />
 			<Menu title='Меню' items={firstMenu} className={styles.menu} />
 			<PopularGenres />
-			<AuthMenu />
+			<DynamicAuthMenu />
 		</nav>
 	)
 }
