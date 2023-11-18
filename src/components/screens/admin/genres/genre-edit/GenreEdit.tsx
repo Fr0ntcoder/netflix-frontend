@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { TGenreEditInput } from 'service/genre/genre.types'
+import { TGenreEditInput } from 'service/genres/genres.types'
 import { stripHtml } from 'string-strip-html'
 
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
@@ -11,7 +11,7 @@ import SlugField from '@/components/ui/form-elements/slug-field/SlugField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
-import { useGenreEdit } from '@/hooks/genre/useGenreEdit'
+import { useGenreEdit } from '@/hooks/genres/genre/useGenreEdit'
 
 import { generateSlug } from '@/utils/string/generate-slug'
 

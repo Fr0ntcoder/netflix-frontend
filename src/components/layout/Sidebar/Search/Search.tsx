@@ -4,7 +4,7 @@ import { FC } from 'react'
 import SearchList from '@/components/layout/sidebar/search/search-list/SearchList'
 import SearchField from '@/components/ui/form-elements/search-field/SearchField'
 
-import { useMovies } from '@/hooks/movie/useMovies'
+import { useMovies } from '@/hooks/movies/useMovies'
 
 import styles from './Search.module.scss'
 

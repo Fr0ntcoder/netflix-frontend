@@ -13,12 +13,14 @@ type TAdminTable = {
 	items: TSearch[]
 	isLoading: boolean
 	notFoundText: string
+	removeHandler: (_id: string) => void
 }
 const AdminTable: FC<TAdminTable> = ({
 	itemsHeader,
 	items,
 	isLoading,
-	notFoundText
+	notFoundText,
+	removeHandler
 }) => {
 	return (
 		<div className={styles.table}>
@@ -32,7 +34,7 @@ const AdminTable: FC<TAdminTable> = ({
 					height={64}
 				/>
 			) : items.length !== 0 ? (
-				<AdminTableBody items={items} />
+				<AdminTableBody removeHandler={removeHandler} items={items} />
 			) : (
 				<span className={styles.empty}>{notFoundText}</span>
 			)}

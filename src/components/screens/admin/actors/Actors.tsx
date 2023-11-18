@@ -1,38 +1,43 @@
 import { FC } from 'react'
 
+import AdminHeader from '@/components/ui/admin/admin-header/AdminHeader'
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
 import AdminTable from '@/components/ui/admin/admin-table/AdminTable'
-import SearchField from '@/components/ui/form-elements/search-field/SearchField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
-import { useActors } from '@/hooks/actors/useActors'
+import { useActorsTable } from '@/hooks/actors/useActorsTable'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
 import styles from './Actors.module.scss'
 
 const Actors: FC = () => {
-	const { data, isLoading, handleSearch, searchTerm } = useActors()
-	const modifData = data?.map(item => ({
-		_id: item._id,
-		link: `${EnumContstantsAdminUrl.ACTOR_EDIT}/${item._id}`,
-		items: [item.name, String(item.countMovies)]
-	}))
+	const {
+		data,
+		isLoading,
+		handleSearch,
+		searchTerm,
+		createAsync,
+		deleteAsync
+	} = useActorsTable()
 	return (
 		<Meta title='Администратор - актёры'>
 			<AdminNavigation />
 			<Heading variant='h2' title='Актёры' className={styles.title} />
-			<SearchField
+			<AdminHeader
+				link={EnumContstantsAdminUrl.ACTOR_СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
-				className={styles.search}
+				onHandler={createAsync}
+				className={styles.header}
 			/>
 			<AdminTable
 				notFoundText='Актёры не найдены'
 				isLoading={isLoading}
 				itemsHeader={['Имя', 'Количество просмотров', 'Действия']}
-				items={modifData || []}
+				items={data || []}
+				removeHandler={deleteAsync}
 			/>
 		</Meta>
 	)

@@ -4,14 +4,14 @@ import StatisticsCountLoader from '@/components/screens/admin/statistics/statist
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 import NotFound from '@/components/ui/not-found/NotFound'
 
-import { useUsers } from '@/hooks/users/useUsers'
+import { useUsersTable } from '@/hooks/users/useUsersTable'
 
 import { decOfNum } from '@/utils/decOfNum'
 
 import styles from './StatisticsCount.module.scss'
 
 const StatisticsCount: FC = () => {
-	const { data, isLoading, isError } = useUsers()
+	const { data, isLoading, isError } = useUsersTable()
 
 	if (isLoading) {
 		return <StatisticsCountLoader />

@@ -5,7 +5,7 @@ import MoviesList from '@/components/layout/sidebar/movies-list/MoviesList'
 import MoviesLoader from '@/components/layout/sidebar/movies-loader/MoviesLoader'
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
-import { useMoviesPopular } from '@/hooks/movie/useMoviesPopular'
+import { useMoviesPopular } from '@/hooks/movies/useMoviesPopular'
 
 import { IClass } from '@/shared/interface/classname.interface'
 

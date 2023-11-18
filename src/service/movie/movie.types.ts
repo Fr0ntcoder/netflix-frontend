@@ -1,5 +1,5 @@
 import { TActor } from 'service/actors/actor.types'
-import { TGenre } from 'service/genre/genre.types'
+import { TGenre } from 'service/genres/genres.types'
 
 type TMovieParameters = {
 	year: number
@@ -21,3 +21,5 @@ export type TMovie = {
 	actors: TActor[]
 	isSendTelegram?: boolean
 }
+
+export type TMovieEditInput = Omit<TMovie, '_id' | 'isSendTelegram' | 'rating'>

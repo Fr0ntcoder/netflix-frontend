@@ -6,21 +6,12 @@ import SearchField from '@/components/ui/form-elements/search-field/SearchField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
-import { useUsers } from '@/hooks/users/useUsers'
-
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
-
-import { dateFormat } from '@/utils/date/date-format'
+import { useUsersTable } from '@/hooks/users/useUsersTable'
 
 import styles from './Users.module.scss'
 
 const Users: FC = () => {
-	const { data, isLoading, handleSearch, searchTerm } = useUsers()
-	const modifData = data?.map(item => ({
-		_id: item._id,
-		link: `${EnumContstantsAdminUrl.USER_EDIT}/${item._id}`,
-		items: [item.email, dateFormat(item.createdAt)]
-	}))
+	const { data, isLoading, handleSearch, searchTerm } = useUsersTable()
 	return (
 		<Meta title='Администратор - пользователи'>
 			<AdminNavigation />
@@ -34,7 +25,7 @@ const Users: FC = () => {
 				notFoundText='Пользователи не найдены'
 				isLoading={isLoading}
 				itemsHeader={['Email', 'Дата регистрации', 'Действия']}
-				items={modifData || []}
+				items={data || []}
 			/>
 		</Meta>
 	)

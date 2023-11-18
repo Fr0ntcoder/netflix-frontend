@@ -1,19 +1,32 @@
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { ActorsService } from 'service/actors/actors.service'
+import { UsersService } from 'service/users/users.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-export const useActors = () => {
+import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+
+import { dateFormat } from '@/utils/date/date-format'
+
+import { TSearch } from './../../shared/types/search.types'
+
+export const useUsersTable = () => {
 	const queryClient = useQueryClient()
 	const [searchTerm, setSearchTerm] = useState('')
 	const debouncedSearch = useDebounce(searchTerm, 500)
 
 	const queryData = useQuery(
-		['actors', debouncedSearch],
-		() => ActorsService.getAll(debouncedSearch),
+		['users table', debouncedSearch],
+		() => UsersService.getAll(debouncedSearch),
 		{
-			select: ({ data }) => data
+			select: ({ data }) =>
+				data.map(
+					(user): TSearch => ({
+						_id: user._id,
+						link: `${EnumContstantsAdminUrl.USER_EDIT}/${user._id}`,
+						items: [user.email, dateFormat(user.createdAt)]
+					})
+				)
 		}
 	)
 
@@ -22,11 +35,11 @@ export const useActors = () => {
 	}
 
 	const { mutateAsync: deleteAsync } = useMutation(
-		['delete actors'],
-		(id: string) => ActorsService.delete(id),
+		['delete users table'],
+		(id: string) => UsersService.delete(id),
 		{
 			onSuccess: () => {
-				queryClient.invalidateQueries('actors')
+				queryClient.invalidateQueries('users')
 			}
 		}
 	)

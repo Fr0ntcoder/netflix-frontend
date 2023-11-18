@@ -1,11 +1,11 @@
 import axiosInstance, { axiosDefault } from 'api/api.config'
-import { TGenre } from 'service/genre/genre.types'
+import { TGenre } from 'service/genres/genres.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
-import { TGenreEditInput } from './genre.types'
+import { TGenreEditInput } from './genres.types'
 
-export const GenreService = {
+export const GenresService = {
 	async getAll(searchTerm?: string) {
 		return await axiosDefault<TGenre[]>({
 			url: EnumContstantsUrl.GENRES,
@@ -15,6 +15,12 @@ export const GenreService = {
 						searchTerm
 				  }
 				: {}
+		})
+	},
+	async getPopular() {
+		return await axiosInstance<TGenre[]>({
+			url: `${EnumContstantsUrl.GENRES}/popular`,
+			method: 'GET'
 		})
 	},
 	async getById(id: string) {
@@ -27,6 +33,13 @@ export const GenreService = {
 		return axiosInstance<string>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
 			method: 'DELETE'
+		})
+	},
+	async create(data: TGenreEditInput) {
+		return axiosInstance<TGenreEditInput>({
+			url: `${EnumContstantsUrl.GENRES}/create`,
+			method: 'POST',
+			data: data
 		})
 	},
 	async update(id: string, data: TGenreEditInput) {

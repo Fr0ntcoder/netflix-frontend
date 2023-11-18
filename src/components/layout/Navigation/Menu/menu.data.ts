@@ -4,21 +4,21 @@ export const firstMenu: TMenuItem[] = [
 	{
 		icon: 'MdHome',
 		link: '/',
-		text: 'Главная'
+		name: 'Главная'
 	},
 	{
 		icon: 'MdExplore',
 		link: '/genres',
-		text: 'Жанры'
+		name: 'Жанры'
 	},
 	{
 		icon: 'MdRefresh',
 		link: '/fresh',
-		text: 'Свежие фильмы'
+		name: 'Свежие фильмы'
 	},
 	{
 		icon: 'MdLocalFireDepartment',
 		link: '/trending',
-		text: 'Актуальные сейчас'
+		name: 'Актуальные сейчас'
 	}
 ]

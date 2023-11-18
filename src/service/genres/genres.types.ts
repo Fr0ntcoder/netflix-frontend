@@ -10,5 +10,3 @@ export type TGenre = {
 }
 
 export type TGenreEditInput = Omit<TGenre, '_id' | 'createdAt'>
-
-/* export type TGenreEditInput = Omit<TGenre, '_id'> */

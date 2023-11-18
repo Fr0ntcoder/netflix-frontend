@@ -1,0 +1,42 @@
+.title {
+	margin-bottom: 30px;
+}
+
+.top {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 30px;
+	margin-bottom: 30px;
+}
+
+.middle {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 30px;
+	margin-bottom: 30px;
+}
+
+.form {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.editor {
+	width: 100%;
+}
+.btn {
+	max-width: 200px;
+}
+
+.file {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap: 30px;
+	grid-row-gap: 20px;
+	margin-bottom: 60px;
+}

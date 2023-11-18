@@ -1,45 +1,43 @@
 import { FC } from 'react'
 
+import AdminHeader from '@/components/ui/admin/admin-header/AdminHeader'
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
 import AdminTable from '@/components/ui/admin/admin-table/AdminTable'
-import SearchField from '@/components/ui/form-elements/search-field/SearchField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
-import { useGenres } from '@/hooks/genre/useGenres'
+import { useGenresTable } from '@/hooks/genres/useGenresTable'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
-
-import { dateFormat } from '@/utils/date/date-format'
-import { trimText } from '@/utils/string/trim-text'
 
 import styles from './Genres.module.scss'
 
 const Genres: FC = () => {
-	const { data, isLoading, handleSearch, searchTerm } = useGenres()
-	const modifData = data?.map(item => ({
-		_id: item._id,
-		link: `${EnumContstantsAdminUrl.GENRE_EDIT}/${item._id}`,
-		items: [
-			item.name,
-			trimText(item.description, 20),
-			dateFormat(item.createdAt)
-		]
-	}))
+	const {
+		data,
+		isLoading,
+		handleSearch,
+		searchTerm,
+		createAsync,
+		deleteAsync
+	} = useGenresTable()
 	return (
 		<Meta title='Администратор - жанры'>
 			<AdminNavigation />
-			<Heading variant='h2' title='Фильм' className={styles.title} />
-			<SearchField
+			<Heading variant='h2' title='Жанры' className={styles.title} />
+			<AdminHeader
+				link={EnumContstantsAdminUrl.GENRE_СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
-				className={styles.search}
+				onHandler={createAsync}
+				className={styles.header}
 			/>
 			<AdminTable
 				notFoundText='Фильмы не найдены'
 				isLoading={isLoading}
 				itemsHeader={['Название', 'Описание', 'Дата', 'Действия']}
-				items={modifData || []}
+				items={data || []}
+				removeHandler={deleteAsync}
 			/>
 		</Meta>
 	)

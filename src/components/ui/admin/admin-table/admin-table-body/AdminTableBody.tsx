@@ -8,9 +8,16 @@ import styles from './AdminTableBody.module.scss'
 
 type TAdminTableBody = {
 	items: TSearch[]
+	removeHandler: (_id: string) => void
 }
-const AdminTableBody: FC<TAdminTableBody> = ({ items }) => {
-	const list = items.map(item => <AdminTableRow item={item} key={item._id} />)
+const AdminTableBody: FC<TAdminTableBody> = ({ items, removeHandler }) => {
+	const list = items.map(item => (
+		<AdminTableRow
+			item={item}
+			key={item._id}
+			removeHandler={() => removeHandler(item._id)}
+		/>
+	))
 	return <div className={styles.body}>{list}</div>
 }
 

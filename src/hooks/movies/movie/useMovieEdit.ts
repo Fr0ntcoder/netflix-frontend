@@ -2,22 +2,22 @@ import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
-import { GenreService } from 'service/genre/genre.service'
-import { TGenreEditInput } from 'service/genre/genre.types'
+import { MovieService } from 'service/movie/movie.service'
+import { TMovieEditInput } from 'service/movie/movie.types'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
 import { getKeys } from '@/utils/object/get-keys'
 import { toastError } from '@/utils/toast-error'
 
-export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
+export const useMovieEdit = (setValue: UseFormSetValue<TMovieEditInput>) => {
 	const { query, push } = useRouter()
 
-	const genreId = String(query.id)
+	const movieId = String(query.id)
 
 	const { isLoading } = useQuery(
-		['genre', genreId],
-		() => GenreService.getById(genreId),
+		['movie', movieId],
+		() => MovieService.getById(movieId),
 		{
 			onSuccess({ data }) {
 				getKeys(data).forEach(key => {
@@ -25,26 +25,26 @@ export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
 				})
 			},
 			onError(error) {
-				toastError(error, 'Get genre')
+				toastError(error, 'Ошибка получения фильма')
 			}
 		}
 	)
 
 	const { mutateAsync } = useMutation(
-		['update genre'],
-		(data: TGenreEditInput) => GenreService.update(genreId, data),
+		['update movie'],
+		(data: TMovieEditInput) => MovieService.update(movieId, data),
 		{
 			onError(error) {
 				toastError(error, 'Ошибка обновления')
 			},
 			onSuccess() {
-				toastr.success('Update genre', 'Вы успешно изменили жанр фильма')
-				push(EnumContstantsAdminUrl.GENRES)
+				toastr.success('Обновление фильма', 'Вы успешно изменили жанр фильма')
+				push(EnumContstantsAdminUrl.MOVIES)
 			}
 		}
 	)
 
-	const onSubmit: SubmitHandler<TGenreEditInput> = async data => {
+	const onSubmit: SubmitHandler<TMovieEditInput> = async data => {
 		await mutateAsync(data)
 	}
 

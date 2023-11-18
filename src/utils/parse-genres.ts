@@ -1,4 +1,4 @@
-import { TGenre } from 'service/genre/genre.types'
+import { TGenre } from 'service/genres/genres.types'
 
 export const parseGenres = (genres: TGenre[]) => {
 	const arr = genres?.map(item => item.name)

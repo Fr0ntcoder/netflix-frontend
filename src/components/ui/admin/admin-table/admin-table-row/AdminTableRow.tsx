@@ -9,13 +9,14 @@ import styles from './AdminTableRow.module.scss'
 
 type TAdminTableRow = {
 	item: TSearch
+	removeHandler: () => void
 }
-const AdminTableRow: FC<TAdminTableRow> = ({ item }) => {
+const AdminTableRow: FC<TAdminTableRow> = ({ item, removeHandler }) => {
 	const list = item.items.map(el => <AdminTableCol text={el} key={el} />)
 	return (
 		<div className={styles.row}>
 			{list}
-			<AdminTableActions id={item._id} link={item.link} />
+			<AdminTableActions removeHandler={removeHandler} link={item.link} />
 		</div>
 	)
 }

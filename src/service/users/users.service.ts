@@ -19,8 +19,7 @@ export const UsersService = {
 	async delete(id: string) {
 		return axiosInstance<TUser[]>({
 			url: `${EnumContstantsUrl.USERS}/${id}`,
-			method: 'DELETE',
-			params: { id }
+			method: 'DELETE'
 		})
 	}
 }

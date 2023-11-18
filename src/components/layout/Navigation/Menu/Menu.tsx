@@ -15,7 +15,7 @@ export type TMenu = {
 }
 
 const Menu: FC<TMenu & IClass> = ({ title, items, className }) => {
-	const list = items.map(item => <MenuItem key={item.link} item={item} />)
+	const list = items.map((item, i) => <MenuItem key={i} item={item} />)
 	return (
 		<div className={cn(styles.menu, className)}>
 			<h3 className={styles.title}>{title}</h3>

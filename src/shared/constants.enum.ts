@@ -1,4 +1,5 @@
 export enum EnumContstantsUrl {
+	FILE = '/files',
 	USER = '/user',
 	USERS = '/users',
 	AUTH = '/auth',
@@ -17,10 +18,13 @@ export enum EnumContstantsAdminUrl {
 	USERS = '/admin/users',
 	USER_EDIT = '/admin/user/edit',
 	MOVIES = '/admin/movies',
+	MOVIE_СREATE = '/admin/movie/create',
 	MOVIE_EDIT = '/admin/movie/edit',
 	ACTORS = '/admin/actors',
+	ACTOR_СREATE = '/admin/actor/create',
 	ACTOR_EDIT = '/admin/actor/edit',
 	GENRES = '/admin/genres',
+	GENRE_СREATE = '/admin/genre/create',
 	GENRE_EDIT = '/admin/genre/edit'
 }
 

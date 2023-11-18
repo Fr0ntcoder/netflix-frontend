@@ -7,3 +7,5 @@ export type TActor = {
 	updatedAt: string
 	countMovies: number
 }
+
+export type TActorEditInput = Pick<TActor, 'name' | 'slug' | 'photo'>

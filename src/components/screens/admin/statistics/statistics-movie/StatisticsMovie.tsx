@@ -6,7 +6,7 @@ import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 import Heading from '@/components/ui/heading/Heading'
 import NotFound from '@/components/ui/not-found/NotFound'
 
-import { useMoviesPopular } from '@/hooks/movie/useMoviesPopular'
+import { useMoviesPopular } from '@/hooks/movies/useMoviesPopular'
 
 import { decOfNum } from '@/utils/decOfNum'
 

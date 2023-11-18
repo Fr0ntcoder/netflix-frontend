@@ -12,7 +12,6 @@ import styles from './MenuItem.module.scss'
 export type TMenuItem = {
 	name: string
 	icon: TypeMaterialIcon
-	text: string
 	link: string
 }
 
@@ -27,7 +26,7 @@ const MenuItem: FC<{ item: TMenuItem }> = ({ item }) => {
 				})}
 			>
 				<Icon name={item.icon} />
-				<span className={styles.text}>{item.text}</span>
+				<span className={styles.text}>{item.name}</span>
 			</Link>
 		</li>
 	)
