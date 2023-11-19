@@ -20,7 +20,7 @@ export const useMovieCreate = () => {
 			},
 			onSuccess() {
 				toastr.success('Обновление фильма', 'Вы успешно изменили фильм')
-				push(EnumContstantsAdminUrl.GENRES)
+				push(EnumContstantsAdminUrl.MOVIES)
 			}
 		}
 	)

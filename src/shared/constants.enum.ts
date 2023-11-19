@@ -7,6 +7,7 @@ export enum EnumContstantsUrl {
 	GENRES = '/genres',
 	MOVIE = '/movie',
 	MOVIES = '/movies',
+	MOVIES_SLUG = '/movies/by-slug/',
 	ACTOR = '/actor',
 	ACTORS = '/actors',
 	STATISTICS = '/statistics',
