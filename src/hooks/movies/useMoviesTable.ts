@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { toastr } from 'react-redux-toastr'
 import { MovieService } from 'service/movie/movie.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
@@ -9,7 +8,6 @@ import { useDebounce } from '@/hooks/other/useDebounce'
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
 import { parseGenres } from '@/utils/parse-genres'
-import { toastError } from '@/utils/toast-error'
 
 import { TSearch } from '../../shared/types/search.types'
 
@@ -42,20 +40,6 @@ export const useMoviesTable = () => {
 		setSearchTerm(e.target.value)
 	}
 
-	const { mutateAsync: createAsync } = useMutation(
-		['create movies table'],
-		() => MovieService.create(),
-		{
-			onError(error) {
-				toastError(error, 'Ошибка создания фильма')
-			},
-			onSuccess: ({ data: _id }) => {
-				toastr.success('Фильм', 'Начало создания фильма')
-				push(`${EnumContstantsAdminUrl.MOVIE_EDIT}/${_id}`)
-			}
-		}
-	)
-
 	const { mutateAsync: deleteAsync } = useMutation(
 		['delete movies table'],
 		(id: string) => MovieService.delete(id),
@@ -72,8 +56,7 @@ export const useMoviesTable = () => {
 			...queryData,
 			debouncedSearch,
 			searchTerm,
-			deleteAsync,
-			createAsync
+			deleteAsync
 		}),
 		[queryData, searchTerm, deleteAsync, debouncedSearch]
 	)

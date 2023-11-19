@@ -1,0 +1,22 @@
+.select {
+	display: block;
+}
+
+.label {
+	display: block;
+}
+
+.text {
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	color: $color-gray-600;
+}
+
+.error {
+	display: block;
+	font-size: 12px;
+	margin-top: 10px;
+	color: $color-primary;
+}

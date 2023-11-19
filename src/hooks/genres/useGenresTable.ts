@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { toastr } from 'react-redux-toastr'
 import { GenresService } from 'service/genres/genres.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
@@ -11,7 +10,6 @@ import { TSearch } from '@/shared/types/search.types'
 
 import { dateFormat } from '@/utils/date/date-format'
 import { trimText } from '@/utils/string/trim-text'
-import { toastError } from '@/utils/toast-error'
 
 export const useGenresTable = () => {
 	const { push } = useRouter()
@@ -42,20 +40,6 @@ export const useGenresTable = () => {
 		setSearchTerm(e.target.value)
 	}
 
-	const { mutateAsync: createAsync } = useMutation(
-		['create genres table'],
-		() => GenresService.create(),
-		{
-			onError(error) {
-				toastError(error, 'Ошибка создания')
-			},
-			onSuccess: ({ data: _id }) => {
-				toastr.success('Create genre', 'create was successful')
-				push(`${EnumContstantsAdminUrl.GENRE_EDIT}/${_id}`)
-			}
-		}
-	)
-
 	const { mutateAsync: deleteAsync } = useMutation(
 		['delete genres table'],
 		(id: string) => GenresService.delete(id),
@@ -71,8 +55,7 @@ export const useGenresTable = () => {
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync,
-			createAsync
+			deleteAsync
 		}),
 		[queryData, searchTerm, deleteAsync]
 	)

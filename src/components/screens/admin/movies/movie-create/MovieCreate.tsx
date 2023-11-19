@@ -11,14 +11,16 @@ import UploadField from '@/components/ui/form-elements/upload-field/UploadField'
 import Heading from '@/components/ui/heading/Heading'
 import Meta from '@/components/ui/meta/Meta'
 
+import { useAdminActor } from '@/hooks/actors/useAdminActor'
+import { useAdminGenre } from '@/hooks/genres/useAdminGenre'
 import { useMovieCreate } from '@/hooks/movies/movie/useMovieCreate'
 
 import { generateSlug } from '@/utils/string/generate-slug'
 
 import styles from './MovieCreate.module.scss'
 
-const DynamicTextEditor = dynamic(
-	() => import('@/components/ui/form-elements/text-editor/TextEditor'),
+const DynamicSelect = dynamic(
+	() => import('@/components/ui/form-elements/select/Select'),
 	{ ssr: false }
 )
 const MovieCreate: FC = () => {
@@ -32,6 +34,8 @@ const MovieCreate: FC = () => {
 	} = useForm<TMovieEditInput>({ mode: 'onChange' })
 
 	const { onSubmit } = useMovieCreate()
+	const { data: actors, isLoading: isActorsLoading } = useAdminActor()
+	const { data: genres, isLoading: isGenresLoading } = useAdminGenre()
 	return (
 		<Meta title='Администратор - добавление фильма' description=''>
 			<AdminNavigation />
@@ -78,6 +82,42 @@ const MovieCreate: FC = () => {
 						})}
 						error={errors.parameters?.year}
 						className={styles.input}
+					/>
+				</div>
+				<div className={styles.bottom}>
+					<Controller
+						control={control}
+						name='genres'
+						render={({ field, fieldState: { error } }) => (
+							<DynamicSelect
+								field={field}
+								options={genres || []}
+								isLoading={isGenresLoading}
+								isMulti
+								placeholder='Жанры'
+								error={error}
+							/>
+						)}
+						rules={{
+							required: 'Выберите жанр'
+						}}
+					/>
+					<Controller
+						control={control}
+						name='actors'
+						render={({ field, fieldState: { error } }) => (
+							<DynamicSelect
+								field={field}
+								options={actors || []}
+								isLoading={isGenresLoading}
+								isMulti
+								placeholder='Актёры'
+								error={error}
+							/>
+						)}
+						rules={{
+							required: 'Выберите актёров'
+						}}
 					/>
 				</div>
 				<div className={styles.file}>
