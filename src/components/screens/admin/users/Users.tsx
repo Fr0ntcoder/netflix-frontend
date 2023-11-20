@@ -11,7 +11,8 @@ import { useUsersTable } from '@/hooks/users/useUsersTable'
 import styles from './Users.module.scss'
 
 const Users: FC = () => {
-	const { data, isLoading, handleSearch, searchTerm } = useUsersTable()
+	const { data, isLoading, handleSearch, deleteAsync, searchTerm } =
+		useUsersTable()
 	return (
 		<Meta title='Администратор - пользователи'>
 			<AdminNavigation />
@@ -26,6 +27,7 @@ const Users: FC = () => {
 				isLoading={isLoading}
 				itemsHeader={['Email', 'Дата регистрации', 'Действия']}
 				items={data || []}
+				removeHandler={deleteAsync}
 			/>
 		</Meta>
 	)

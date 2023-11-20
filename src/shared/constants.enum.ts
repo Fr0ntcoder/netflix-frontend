@@ -5,13 +5,17 @@ export enum EnumContstantsUrl {
 	AUTH = '/auth',
 	GENRE = '/genre',
 	GENRES = '/genres',
+	GENRES_SLUG = '/genres/by-slug',
 	MOVIE = '/movie',
 	MOVIES = '/movies',
-	MOVIES_SLUG = '/movies/by-slug/',
+	MOVIES_SLUG = '/movies/by-slug',
+	MOVIES_GENRES = '/movies/by-genres',
+	MOVIES_ACTOR = '/movies/by-actor',
 	ACTOR = '/actor',
 	ACTORS = '/actors',
+	ACTORS_SLUG = '/actors/by-slug',
 	STATISTICS = '/statistics',
-	MOVIES_POPULAR = '/movies/most-popular'
+	MOVIES_POPULAR = '/movies/most-popular',
 }
 
 export enum EnumContstantsAdminUrl {
@@ -26,7 +30,7 @@ export enum EnumContstantsAdminUrl {
 	ACTOR_EDIT = '/admin/actor/edit',
 	GENRES = '/admin/genres',
 	GENRE_СREATE = '/admin/genre/create',
-	GENRE_EDIT = '/admin/genre/edit'
+	GENRE_EDIT = '/admin/genre/edit',
 }
 
 export const accentColor = '#E30B13'

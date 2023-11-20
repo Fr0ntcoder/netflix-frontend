@@ -7,13 +7,13 @@ export const useGenresPopular = () => {
 	return useQuery(['genres popular'], () => GenresService.getPopular(), {
 		select: ({ data }) =>
 			data
-				.filter(genre => genre.icon)
-				.map(item => ({
+				.filter((genre) => genre.icon)
+				.map((item) => ({
 					name: item.name,
 					icon: item.icon,
 					text: item.name,
-					link: EnumContstantsUrl.GENRE
+					link: `${EnumContstantsUrl.GENRE}/${item.slug}`,
 				}))
-				.slice(0, 4)
+				.slice(0, 4),
 	})
 }

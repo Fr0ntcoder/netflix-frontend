@@ -8,6 +8,8 @@ import Slide from '@/components/ui/slider/slide/Slide'
 
 import { useSlider } from '@/hooks/other/useSlider'
 
+import { IClass } from '@/shared/interface/classname.interface'
+
 import { FADE_IN } from '@/utils/animation/fade-in'
 
 import styles from './Slider.module.scss'
@@ -15,19 +17,19 @@ import styles from './Slider.module.scss'
 type TSlider = {
 	slides: TMovie[]
 }
-const Slider: FC<TSlider> = ({ slides }) => {
+const Slider: FC<TSlider & IClass> = ({ slides, className }) => {
 	const { index, isNext, isPrev, slideIn, handleClick } = useSlider(
 		slides.length
 	)
 	return (
-		<div className={styles.slider}>
+		<div className={cn(styles.slider, className)}>
 			{isPrev && (
 				<button
 					{...FADE_IN}
 					className={cn(styles.btn, styles.prev)}
 					onClick={() => handleClick('prev')}
 				>
-					<Icon name='MdArrowBackIos' />
+					<Icon name="MdArrowBackIos" />
 				</button>
 			)}
 			{isNext && (
@@ -36,7 +38,7 @@ const Slider: FC<TSlider> = ({ slides }) => {
 					className={cn(styles.btn, styles.next)}
 					onClick={() => handleClick('next')}
 				>
-					<Icon name='MdArrowForwardIos' />
+					<Icon name="MdArrowForwardIos" />
 				</button>
 			)}
 			<AnimatePresence>

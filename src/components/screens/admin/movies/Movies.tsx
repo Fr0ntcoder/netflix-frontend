@@ -18,14 +18,8 @@ import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 import styles from './Movies.module.scss'
 
 const Movies: FC = () => {
-	const {
-		data,
-		isLoading,
-		handleSearch,
-		searchTerm,
-		createAsync,
-		deleteAsync
-	} = useMoviesTable()
+	const { data, isLoading, handleSearch, searchTerm, deleteAsync } =
+		useMoviesTable()
 	return (
 		<Meta title='Администратор - фильмы'>
 			<AdminNavigation />
@@ -34,7 +28,6 @@ const Movies: FC = () => {
 				link={EnumContstantsAdminUrl.MOVIE_СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
-				onHandler={createAsync}
 				className={styles.header}
 			/>
 			<AdminTable

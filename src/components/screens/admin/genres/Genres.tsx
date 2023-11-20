@@ -13,14 +13,8 @@ import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 import styles from './Genres.module.scss'
 
 const Genres: FC = () => {
-	const {
-		data,
-		isLoading,
-		handleSearch,
-		searchTerm,
-		createAsync,
-		deleteAsync
-	} = useGenresTable()
+	const { data, isLoading, handleSearch, searchTerm, deleteAsync } =
+		useGenresTable()
 	return (
 		<Meta title='Администратор - жанры'>
 			<AdminNavigation />
@@ -29,7 +23,6 @@ const Genres: FC = () => {
 				link={EnumContstantsAdminUrl.GENRE_СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
-				onHandler={createAsync}
 				className={styles.header}
 			/>
 			<AdminTable

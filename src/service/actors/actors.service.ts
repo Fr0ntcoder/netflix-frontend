@@ -11,36 +11,41 @@ export const ActorsService = {
 			method: 'GET',
 			params: searchTerm
 				? {
-						searchTerm
+						searchTerm,
 				  }
-				: {}
+				: {},
+		})
+	},
+	async getBySlug(slug: string) {
+		return axiosDefault<TActor>({
+			url: `${EnumContstantsUrl.ACTORS_SLUG}/${slug}`,
+			method: 'GET',
 		})
 	},
 	async getById(id: string) {
-		return await axiosInstance<TActorEditInput>({
+		return await axiosDefault<TActorEditInput>({
 			url: `${EnumContstantsUrl.ACTORS}/${id}`,
-			method: 'GET'
+			method: 'GET',
 		})
 	},
-
 	async delete(id: string) {
 		return axiosInstance<string>({
 			url: `${EnumContstantsUrl.ACTORS}/${id}`,
-			method: 'DELETE'
+			method: 'DELETE',
 		})
 	},
 	async create(data: TActorEditInput) {
 		return axiosInstance<TActorEditInput>({
 			url: `${EnumContstantsUrl.ACTORS}/create`,
 			method: 'POST',
-			data: data
+			data: data,
 		})
 	},
 	async update(id: string, data: TActorEditInput) {
 		return axiosInstance<TActorEditInput>({
 			url: `${EnumContstantsUrl.ACTORS}/${id}`,
 			method: 'PUT',
-			data: { ...data }
+			data: { ...data },
 		})
-	}
+	},
 }

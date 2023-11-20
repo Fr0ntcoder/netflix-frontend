@@ -12,41 +12,49 @@ export const GenresService = {
 			method: 'GET',
 			params: searchTerm
 				? {
-						searchTerm
+						searchTerm,
 				  }
-				: {}
+				: {},
 		})
 	},
 	async getPopular() {
-		return await axiosInstance<TGenre[]>({
+		return await axiosDefault<TGenre[]>({
 			url: `${EnumContstantsUrl.GENRES}/popular`,
-			method: 'GET'
+			method: 'GET',
 		})
 	},
 	async getById(id: string) {
-		return await axiosInstance<TGenreEditInput>({
+		return await axiosDefault<TGenreEditInput>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
-			method: 'GET'
+			method: 'GET',
 		})
 	},
+
+	async getBySlug(slug: string) {
+		return await axiosDefault<TGenre>({
+			url: `${EnumContstantsUrl.GENRES_SLUG}/${slug}`,
+			method: 'GET',
+		})
+	},
+
 	async delete(id: string) {
 		return axiosInstance<string>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
-			method: 'DELETE'
+			method: 'DELETE',
 		})
 	},
 	async create(data: TGenreEditInput) {
 		return axiosInstance<TGenreEditInput>({
 			url: `${EnumContstantsUrl.GENRES}/create`,
 			method: 'POST',
-			data: data
+			data: data,
 		})
 	},
 	async update(id: string, data: TGenreEditInput) {
 		return axiosInstance<TGenreEditInput>({
 			url: `${EnumContstantsUrl.GENRES}/${id}`,
 			method: 'PUT',
-			data: { ...data }
+			data: { ...data },
 		})
-	}
+	},
 }

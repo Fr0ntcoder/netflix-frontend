@@ -12,7 +12,6 @@ type TAdminHeader = {
 	searchTerm: string
 	link: string
 	handleSearch: (e: ChangeEvent<HTMLInputElement>) => void
-	onHandler?: () => void
 }
 const AdminHeader: FC<TAdminHeader & IClass> = ({
 	searchTerm,

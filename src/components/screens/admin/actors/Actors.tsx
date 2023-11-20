@@ -13,14 +13,8 @@ import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 import styles from './Actors.module.scss'
 
 const Actors: FC = () => {
-	const {
-		data,
-		isLoading,
-		handleSearch,
-		searchTerm,
-		createAsync,
-		deleteAsync
-	} = useActorsTable()
+	const { data, isLoading, handleSearch, searchTerm, deleteAsync } =
+		useActorsTable()
 	return (
 		<Meta title='Администратор - актёры'>
 			<AdminNavigation />
@@ -29,7 +23,6 @@ const Actors: FC = () => {
 				link={EnumContstantsAdminUrl.ACTOR_СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
-				onHandler={createAsync}
 				className={styles.header}
 			/>
 			<AdminTable

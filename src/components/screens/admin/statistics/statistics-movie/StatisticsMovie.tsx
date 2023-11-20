@@ -29,7 +29,7 @@ const StatisticsMovie: FC = () => {
 
 	return (
 		<div className={styles.wrap}>
-			<Heading variant='h5' title='Популярные фильмы' />
+			<Heading variant="h5" title="Популярные фильмы" />
 			<span className={styles.count}>
 				Открыли {data[0].countOpened}
 				{decOfNum(data[0].countOpened, ['раз', 'раза', 'раз'])}
@@ -40,7 +40,7 @@ const StatisticsMovie: FC = () => {
 					fill={true}
 					style={{
 						objectFit: 'cover',
-						objectPosition: 'center'
+						objectPosition: 'center',
 					}}
 					priority={true}
 					draggable={false}

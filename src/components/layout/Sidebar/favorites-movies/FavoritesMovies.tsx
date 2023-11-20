@@ -32,7 +32,7 @@ const FavoritesMovies: FC<IClass> = ({ className }) => {
 
 	return (
 		<div className={cn(styles.favorites, className)}>
-			<MoviesList title='Избранные фильмы' movies={movies} />
+			<MoviesList title="Избранные фильмы" movies={movies} />
 		</div>
 	)
 }

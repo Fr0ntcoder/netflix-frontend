@@ -22,7 +22,7 @@ const PopularMovies: FC<IClass> = ({ className }) => {
 
 	return (
 		<div className={cn(styles.popular, className)}>
-			<MoviesList title='Популярные фильмы' movies={movies} />
+			<MoviesList title="Популярные фильмы" movies={movies} />
 		</div>
 	)
 }

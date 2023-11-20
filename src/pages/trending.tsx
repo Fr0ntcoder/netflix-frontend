@@ -1,9 +1,32 @@
-import { FC } from 'react'
+import { GetStaticProps, NextPage } from 'next'
+import { MovieService } from 'service/movie/movie.service'
+import { TMovie } from 'service/movie/movie.types'
 
-import Trending from '@/components/screens/trending/Trending'
+import CatalogMovies from '@/components/ui/catalog/catalog-movies/CatalogMovies'
 
-const TrendingPage: FC = () => {
-	return <Trending />
+const TrendingPage: NextPage<{ movies: TMovie[] }> = ({ movies }) => {
+	return (
+		<CatalogMovies
+			title="Последние фильмы"
+			movies={movies}
+			description="Текст"
+		/>
+	)
 }
 
+export const getStaticProps: GetStaticProps = async () => {
+	try {
+		const { data: movies } = await MovieService.getMostPopular()
+
+		return {
+			props: {
+				movies,
+			},
+		}
+	} catch (error) {
+		return {
+			notFound: true,
+		}
+	}
+}
 export default TrendingPage
