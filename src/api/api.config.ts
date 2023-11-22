@@ -4,19 +4,22 @@ import Cookies from 'js-cookie'
 import { removeTokensStorage } from 'service/auth/auth.helper'
 import { AuthService } from 'service/auth/auth.service'
 
+import { IS_PRODUCTION } from './../shared/constants.enum'
+
 export const API_URL = `${process.env.APP_URL}/api`
+export const API_SERVER_URL = `${process.env.APP_SERVER_URL}/api`
 
 export const axiosDefault = axios.create({
-	baseURL: API_URL,
-	headers: getContentType()
+	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
+	headers: getContentType(),
 })
 
 export const axiosInstance = axios.create({
 	baseURL: API_URL,
-	headers: getContentType()
+	headers: getContentType(),
 })
 
-axiosInstance.interceptors.request.use(config => {
+axiosInstance.interceptors.request.use((config) => {
 	const accessToken = Cookies.get('accessToken')
 
 	if (config.headers && accessToken) {
@@ -27,8 +30,8 @@ axiosInstance.interceptors.request.use(config => {
 })
 
 axiosInstance.interceptors.response.use(
-	config => config,
-	async error => {
+	(config) => config,
+	async (error) => {
 		const originalRequest = error.config
 
 		if (

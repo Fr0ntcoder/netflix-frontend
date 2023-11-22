@@ -3,14 +3,14 @@ import { errorCatch } from 'api/api.helpers'
 import { toastr } from 'react-redux-toastr'
 import { AuthService } from 'service/auth/auth.service'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
+import { AuthUrl } from '@/shared/constants.enum'
 
 import { toastError } from '@/utils/toast-error'
 
 import { TAuthData, TAuthReponse } from '@/store/user/user.types'
 
 export const register = createAsyncThunk<TAuthReponse, TAuthData>(
-	`${EnumContstantsUrl.AUTH}/register`,
+	AuthUrl.REGISTER,
 	async ({ email, password }, thunkApi) => {
 		try {
 			const response = await AuthService.register(email, password)
@@ -26,7 +26,7 @@ export const register = createAsyncThunk<TAuthReponse, TAuthData>(
 )
 
 export const login = createAsyncThunk<TAuthReponse, TAuthData>(
-	'auth/login',
+	AuthUrl.LOGIN,
 	async ({ email, password }, thunkApi) => {
 		try {
 			const response = await AuthService.login(email, password)
@@ -40,15 +40,12 @@ export const login = createAsyncThunk<TAuthReponse, TAuthData>(
 	}
 )
 
-export const logout = createAsyncThunk(
-	`${EnumContstantsUrl.AUTH}/logout`,
-	async () => {
-		await AuthService.logout()
-	}
-)
+export const logout = createAsyncThunk(AuthUrl.LOGOUT, async () => {
+	await AuthService.logout()
+})
 
 export const checkAuth = createAsyncThunk<TAuthReponse>(
-	`${EnumContstantsUrl.AUTH}/check-auth`,
+	AuthUrl.CHECK,
 	async (_, thunkApi) => {
 		try {
 			const response = await AuthService.getNewTokens()

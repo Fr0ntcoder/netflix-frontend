@@ -12,7 +12,7 @@
 .list {
 	display: grid;
 	grid-row-gap: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 
 .item {
@@ -56,4 +56,14 @@
 		flex-direction: column;
 		padding-left: 15px;
 	}
+}
+
+.link {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	padding: 10px 15px;
+	border-radius: 10px;
+	background: $color-primary;
 }

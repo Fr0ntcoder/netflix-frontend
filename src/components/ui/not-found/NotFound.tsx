@@ -2,8 +2,12 @@ import { FC } from 'react'
 
 import styles from './NotFound.module.scss'
 
-const NotFound: FC = () => {
-	return <div className={styles.empty}>Не найдено!</div>
+type TNotFound = {
+	text: string
+}
+
+const NotFound: FC<TNotFound> = ({ text }) => {
+	return <div className={styles.empty}>{text}</div>
 }
 
 export default NotFound

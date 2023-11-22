@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { FC } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
@@ -6,6 +7,8 @@ import AuthButton from '@/components/ui/video-player/auth-button/AuthButton'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useRating } from '@/hooks/rating/useRating'
+
+import { FADE_IN } from '@/utils/animation/fade-in'
 
 import styles from './MovieRating.module.scss'
 
@@ -19,7 +22,7 @@ const MovieRating: FC<TMovieRating> = ({ movieId, slug }) => {
 	return (
 		<div className={styles.rating}>
 			<Heading
-				variant="h5"
+				variant="h4"
 				title="Вам нравится фильм?"
 				className={styles.title}
 			/>
@@ -28,9 +31,17 @@ const MovieRating: FC<TMovieRating> = ({ movieId, slug }) => {
 			{user ? (
 				<>
 					{isSended ? (
-						<div className={styles.tanks}>Спасибо,что поставили оценку!</div>
+						<AnimatePresence>
+							<motion.div {...FADE_IN} className={styles.thanks}>
+								Спасибо,что поставили оценку!
+							</motion.div>
+						</AnimatePresence>
 					) : (
-						<Rating onClick={handleClick} initialValue={rating} />
+						<AnimatePresence>
+							<motion.div {...FADE_IN}>
+								<Rating onClick={handleClick} initialValue={rating} />
+							</motion.div>
+						</AnimatePresence>
 					)}
 				</>
 			) : (

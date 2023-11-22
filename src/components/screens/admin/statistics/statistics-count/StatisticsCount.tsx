@@ -22,7 +22,7 @@ const StatisticsCount: FC = () => {
 	}
 
 	if (data?.length === 0 || !data) {
-		return <NotFound />
+		return <NotFound text="Пользователи не найдены" />
 	}
 	return (
 		<div className={styles.wrap}>

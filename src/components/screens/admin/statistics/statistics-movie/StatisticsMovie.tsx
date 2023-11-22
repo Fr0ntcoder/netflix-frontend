@@ -24,7 +24,7 @@ const StatisticsMovie: FC = () => {
 	}
 
 	if (!data) {
-		return <NotFound />
+		return <NotFound text="Пусто" />
 	}
 
 	return (

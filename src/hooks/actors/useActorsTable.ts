@@ -5,7 +5,7 @@ import { ActorService } from 'service/actor/actor.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminActorsUrl } from '@/shared/constants.enum'
 
 import { TSearch } from './../../shared/types/search.types'
 
@@ -23,7 +23,7 @@ export const useActorsTable = () => {
 				data.map(
 					(genre): TSearch => ({
 						_id: genre._id,
-						link: `${EnumContstantsAdminUrl.ACTOR_EDIT}/${genre._id}`,
+						link: `${AdminActorsUrl.EDIT}/${genre._id}`,
 						items: [genre.name, String(genre.countMovies)],
 					})
 				),

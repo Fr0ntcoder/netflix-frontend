@@ -5,7 +5,7 @@ import { MovieService } from 'service/movie/movie.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminMoviesUrl } from '@/shared/constants.enum'
 
 import { parseGenres } from '@/utils/parse-genres'
 
@@ -25,14 +25,14 @@ export const useMoviesTable = () => {
 				data.map(
 					(movie): TSearch => ({
 						_id: movie._id,
-						link: `${EnumContstantsAdminUrl.MOVIE_EDIT}/${movie._id}`,
+						link: `${AdminMoviesUrl.EDIT}/${movie._id}`,
 						items: [
 							movie.title,
 							parseGenres(movie.genres),
-							String(movie.rating)
-						]
+							String(movie.rating),
+						],
 					})
-				)
+				),
 		}
 	)
 
@@ -46,7 +46,7 @@ export const useMoviesTable = () => {
 		{
 			onSuccess: () => {
 				queryClient.invalidateQueries('movies')
-			}
+			},
 		}
 	)
 
@@ -56,7 +56,7 @@ export const useMoviesTable = () => {
 			...queryData,
 			debouncedSearch,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
 		}),
 		[queryData, searchTerm, deleteAsync, debouncedSearch]
 	)

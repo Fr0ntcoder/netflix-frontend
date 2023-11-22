@@ -14,7 +14,7 @@ const CatalogMovies: FC<TCatalogMovie> = ({ movies, title, description }) => {
 	))
 	return (
 		<Meta title={title}>
-			<Heading title={title} variant="h4" className={styles.title} />
+			<Heading title={title} variant="h5" className={styles.title} />
 			{description && (
 				<Description text={description} className={styles.description} />
 			)}

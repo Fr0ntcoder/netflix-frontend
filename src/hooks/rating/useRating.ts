@@ -3,9 +3,12 @@ import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 import { RatingService } from 'service/rating/rating.service'
 
+import { useAuth } from '@/hooks/auth/useAuth'
+
 import { toastError } from '@/utils/toast-error'
 
 export const useRating = (movieId: string) => {
+	const { user } = useAuth()
 	const [rating, setRating] = useState(0)
 	const [isSended, setIsSended] = useState(false)
 	const queryClient = useQueryClient()
@@ -19,7 +22,7 @@ export const useRating = (movieId: string) => {
 			onError(error) {
 				toastError(error, 'Получение рейтинга')
 			},
-			enabled: !!movieId,
+			enabled: !!movieId && !!user,
 		}
 	)
 

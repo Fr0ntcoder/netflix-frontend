@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { UserService } from 'service/user/user.service'
 import { TUserInput } from 'service/user/user.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminUsersUrl } from '@/shared/constants.enum'
 
 import { toastError } from '@/utils/toast-error'
 
@@ -38,7 +38,7 @@ export const useUserEdit = (setValue: UseFormSetValue<TUserInput>) => {
 			},
 			onSuccess() {
 				toastr.success('Обновление', 'Вы успешно обновили!')
-				push(EnumContstantsAdminUrl.USERS)
+				push(AdminUsersUrl.ROOT)
 			},
 		}
 	)

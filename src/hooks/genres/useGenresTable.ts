@@ -5,7 +5,7 @@ import { GenreService } from 'service/genre/genre.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminGenresUrl } from '@/shared/constants.enum'
 import { TSearch } from '@/shared/types/search.types'
 
 import { dateFormat } from '@/utils/date/date-format'
@@ -25,7 +25,7 @@ export const useGenresTable = () => {
 				data.map(
 					(genre): TSearch => ({
 						_id: genre._id,
-						link: `${EnumContstantsAdminUrl.GENRE_EDIT}/${genre._id}`,
+						link: `${AdminGenresUrl.EDIT}/${genre._id}`,
 						items: [
 							genre.name,
 							trimText(genre.description, 20),

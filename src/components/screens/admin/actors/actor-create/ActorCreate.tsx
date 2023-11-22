@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { TActorEditInput } from 'service/actor/actor.types'
@@ -16,11 +15,6 @@ import { useActorCreate } from '@/hooks/actors/actor/useActorCreate'
 import { generateSlug } from '@/utils/string/generate-slug'
 
 import styles from './ActorCreate.module.scss'
-
-const DynamicTextEditor = dynamic(
-	() => import('@/components/ui/form-elements/text-editor/TextEditor'),
-	{ ssr: false }
-)
 
 const ActorCreate: FC = () => {
 	const {

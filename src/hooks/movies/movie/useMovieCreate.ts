@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovieEditInput } from 'service/movie/movie.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminMoviesUrl } from '@/shared/constants.enum'
 
 import { toastError } from '@/utils/toast-error'
 
@@ -20,12 +20,12 @@ export const useMovieCreate = () => {
 			},
 			onSuccess() {
 				toastr.success('Обновление фильма', 'Вы успешно изменили фильм')
-				push(EnumContstantsAdminUrl.MOVIES)
-			}
+				push(AdminMoviesUrl.ROOT)
+			},
 		}
 	)
 
-	const onSubmit: SubmitHandler<TMovieEditInput> = async data => {
+	const onSubmit: SubmitHandler<TMovieEditInput> = async (data) => {
 		await mutateAsync(data)
 	}
 

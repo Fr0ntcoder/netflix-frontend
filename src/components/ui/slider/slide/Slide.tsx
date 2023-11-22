@@ -6,7 +6,7 @@ import { TMovie } from 'service/movie/movie.types'
 
 import Heading from '@/components/ui/heading/Heading'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
+import { MovieUrl } from '@/shared/constants.enum'
 
 import { FADE_IN } from '@/utils/animation/fade-in'
 import { parseGenres } from '@/utils/parse-genres'
@@ -24,19 +24,16 @@ const Slide: FC<TSlide> = ({ item }) => {
 				fill={true}
 				style={{
 					objectFit: 'cover',
-					objectPosition: 'center'
+					objectPosition: 'center',
 				}}
 				priority={true}
 				draggable={false}
 				alt={item.title}
 			/>
 			<div className={styles.content}>
-				<Heading title={item.title} variant='h5' className={styles.title} />
+				<Heading title={item.title} variant="h4" className={styles.title} />
 				<span className={styles.genres}>{parseGenres(item.genres)}</span>
-				<Link
-					href={`${EnumContstantsUrl.MOVIES_SLUG}/${item.slug}`}
-					className={styles.link}
-				>
+				<Link href={`${MovieUrl.ROOT}/${item.slug}`} className={styles.link}>
 					Смотреть
 				</Link>
 			</div>

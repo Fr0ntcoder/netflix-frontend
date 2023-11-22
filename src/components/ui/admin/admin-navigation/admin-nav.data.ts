@@ -1,31 +1,37 @@
 import { TAdminNavItem } from '@/components/ui/admin/admin-navigation/admin.nav.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import {
+	AdminActorsUrl,
+	AdminGenresUrl,
+	AdminMoviesUrl,
+	AdminUrl,
+	AdminUsersUrl,
+} from '@/shared/constants.enum'
 
 export const AdminDataNav: TAdminNavItem[] = [
 	{
 		id: 1,
 		text: 'Статистика',
-		link: EnumContstantsAdminUrl.ADMIN
+		link: AdminUrl.ROOT,
 	},
 	{
 		id: 2,
 		text: 'Пользователи',
-		link: EnumContstantsAdminUrl.USERS
+		link: AdminUsersUrl.ROOT,
 	},
 	{
 		id: 3,
 		text: 'Фильмы',
-		link: EnumContstantsAdminUrl.MOVIES
+		link: AdminMoviesUrl.ROOT,
 	},
 	{
 		id: 4,
 		text: 'Актеры',
-		link: EnumContstantsAdminUrl.ACTORS
+		link: AdminActorsUrl.ROOT,
 	},
 	{
 		id: 5,
 		text: 'Жанры',
-		link: EnumContstantsAdminUrl.GENRES
-	}
+		link: AdminGenresUrl.ROOT,
+	},
 ]

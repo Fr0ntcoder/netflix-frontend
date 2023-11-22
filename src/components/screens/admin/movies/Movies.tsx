@@ -13,7 +13,7 @@ import Meta from '@/components/ui/meta/Meta'
 
 import { useMoviesTable } from '@/hooks/movies/useMoviesTable'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminMoviesUrl } from '@/shared/constants.enum'
 
 import styles from './Movies.module.scss'
 
@@ -21,17 +21,17 @@ const Movies: FC = () => {
 	const { data, isLoading, handleSearch, searchTerm, deleteAsync } =
 		useMoviesTable()
 	return (
-		<Meta title='Администратор - фильмы'>
+		<Meta title="Администратор - фильмы">
 			<AdminNavigation />
-			<Heading variant='h2' title='Фильм' className={styles.title} />
+			<Heading variant="h2" title="Фильм" className={styles.title} />
 			<AdminHeader
-				link={EnumContstantsAdminUrl.MOVIE_СREATE}
+				link={AdminMoviesUrl.СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
 				className={styles.header}
 			/>
 			<AdminTable
-				notFoundText='Фильмы не найдены'
+				notFoundText="Фильмы не найдены"
 				isLoading={isLoading}
 				itemsHeader={['Название', 'Жанры', 'Рейтинг', 'Действия']}
 				items={data || []}

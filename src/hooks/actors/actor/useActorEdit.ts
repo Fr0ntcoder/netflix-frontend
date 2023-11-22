@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { ActorService } from 'service/actor/actor.service'
 import { TActorEditInput } from 'service/actor/actor.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminActorsUrl } from '@/shared/constants.enum'
 
 import { getKeys } from '@/utils/object/get-keys'
 import { toastError } from '@/utils/toast-error'
@@ -39,7 +39,7 @@ export const useActorEdit = (setValue: UseFormSetValue<TActorEditInput>) => {
 			},
 			onSuccess() {
 				toastr.success('Обновление актёра', 'Вы успешно изменили актёра')
-				push(EnumContstantsAdminUrl.ACTORS)
+				push(AdminActorsUrl.ROOT)
 			},
 		}
 	)

@@ -7,9 +7,9 @@ export const firstMenu: TMenuItem[] = [
 		name: 'Главная',
 	},
 	{
-		icon: 'MdExplore',
-		link: '/genres',
-		name: 'Жанры',
+		icon: 'MdOutlineFavorite',
+		link: '/favorites',
+		name: 'Избранное',
 	},
 	{
 		icon: 'MdRefresh',

@@ -6,7 +6,7 @@ import { TMovie } from 'service/movie/movie.types'
 import Home, { THome } from '@/components/screens/home/Home'
 import { TGallery } from '@/components/ui/gallery/gallery.types'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
+import { ActorUrl, MovieUrl } from '@/shared/constants.enum'
 
 const HomePage: NextPage<THome> = (props) => {
 	return <Home {...props} />
@@ -19,16 +19,16 @@ export const getStaticProps: GetStaticProps = async () => {
 		const { data: actorsData } = await ActorService.getAll()
 		const movies: TMovie[] = moviesData.slice(0, 4)
 		const popularMovies: TGallery[] = moviesPopularData
-			.slice(0, 3)
+			.slice(0, 6)
 			.map((item) => ({
 				_id: item._id,
 				poster: item.poster,
-				link: `${EnumContstantsUrl.MOVIES_SLUG}/${item._id}`,
+				link: `${MovieUrl.ROOT}/${item.slug}`,
 			}))
 		const actors: TGallery[] = actorsData.slice(0, 6).map((item) => ({
 			_id: item._id,
 			poster: item.photo,
-			link: `${EnumContstantsUrl.ACTOR}/${item.slug}`,
+			link: `${ActorUrl.ROOT}/${item.slug}`,
 			content: {
 				title: item.name,
 				text: `Просмотры - ${String(item.countMovies)}`,
@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
 				popularMovies,
 				actors,
 			} as THome,
+			revalidate: 60,
 		}
 	} catch (error) {
 		return {

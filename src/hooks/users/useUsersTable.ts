@@ -4,7 +4,7 @@ import { UserService } from 'service/user/user.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminUsersUrl } from '@/shared/constants.enum'
 
 import { dateFormat } from '@/utils/date/date-format'
 
@@ -23,7 +23,7 @@ export const useUsersTable = () => {
 				data.map(
 					(user): TSearch => ({
 						_id: user._id,
-						link: `${EnumContstantsAdminUrl.USER_EDIT}/${user._id}`,
+						link: `${AdminUsersUrl.EDIT}/${user._id}`,
 						items: [user.email, dateFormat(user.createdAt)],
 					})
 				),

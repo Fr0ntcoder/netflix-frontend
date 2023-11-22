@@ -5,13 +5,7 @@ import { TMovie } from 'service/movie/movie.types'
 import CatalogMovies from '@/components/ui/catalog/catalog-movies/CatalogMovies'
 
 const FreshPage: NextPage<{ movies: TMovie[] }> = ({ movies }) => {
-	return (
-		<CatalogMovies
-			title="Последние фильмы"
-			movies={movies}
-			description="Текст"
-		/>
-	)
+	return <CatalogMovies title="Новые фильмы" movies={movies} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -22,6 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			props: {
 				movies,
 			},
+			revalidate: 60,
 		}
 	} catch (error) {
 		return {

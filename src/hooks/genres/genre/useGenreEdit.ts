@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { GenreService } from 'service/genre/genre.service'
 import { TGenreEditInput } from 'service/genre/genre.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminGenresUrl } from '@/shared/constants.enum'
 
 import { getKeys } from '@/utils/object/get-keys'
 import { toastError } from '@/utils/toast-error'
@@ -39,7 +39,7 @@ export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
 			},
 			onSuccess() {
 				toastr.success('Update genre', 'Вы успешно изменили жанр фильма')
-				push(EnumContstantsAdminUrl.GENRES)
+				push(AdminGenresUrl.ROOT)
 			},
 		}
 	)

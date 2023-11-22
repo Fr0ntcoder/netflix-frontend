@@ -8,13 +8,19 @@ import { TVideoPlayer } from '@/components/ui/video-player/video.types'
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useVideo } from '@/hooks/video/useVideo'
 
+import { IClass } from '@/shared/interface/classname.interface'
+
 import styles from './VideoPlayer.module.scss'
 
-const VideoPlayer: FC<TVideoPlayer> = ({ slug, videoSource }) => {
+const VideoPlayer: FC<TVideoPlayer & IClass> = ({
+	slug,
+	videoSource,
+	className,
+}) => {
 	const { actions, video, videoRef } = useVideo()
 	const { user } = useAuth()
 	return (
-		<div className={cn(styles.wrap)}>
+		<div className={cn(styles.wrap, className)}>
 			{!user ? (
 				<AuthPlaceholder slug={slug} />
 			) : (

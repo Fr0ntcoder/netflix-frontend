@@ -1,21 +1,22 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
+import FavoriteButton from '@/components/ui/button/favorite-button/FavoriteButton'
 import Heading from '@/components/ui/heading/Heading'
 
-import { MovieUrl } from '@/shared/constants.enum'
+import { useAuth } from '@/hooks/auth/useAuth'
 
-import styles from './CatalogMoviesItem.module.scss'
+import styles from './FavoriteItem.module.scss'
 
-type TCatalogMoviesItem = {
+type TFavoriteItem = {
 	movie: TMovie
 }
-
-const CatalogMoviesItem: FC<TCatalogMoviesItem> = ({ movie }) => {
+const FavoriteItem: FC<TFavoriteItem> = ({ movie }) => {
+	const { user } = useAuth()
 	return (
-		<Link href={`${MovieUrl.ROOT}/${movie.slug}`} className={styles.item}>
+		<div className={styles.item}>
+			{user && <FavoriteButton movieId={movie._id} className={styles.btn} />}
 			<Image
 				src={movie.poster}
 				fill={true}
@@ -28,8 +29,8 @@ const CatalogMoviesItem: FC<TCatalogMoviesItem> = ({ movie }) => {
 				alt=""
 			/>
 			<Heading title={movie.title} variant="h6" className={styles.title} />
-		</Link>
+		</div>
 	)
 }
 
-export default CatalogMoviesItem
+export default FavoriteItem

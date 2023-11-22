@@ -8,7 +8,7 @@ import Meta from '@/components/ui/meta/Meta'
 
 import { useActorsTable } from '@/hooks/actors/useActorsTable'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminActorsUrl } from '@/shared/constants.enum'
 
 import styles from './Actors.module.scss'
 
@@ -16,17 +16,17 @@ const Actors: FC = () => {
 	const { data, isLoading, handleSearch, searchTerm, deleteAsync } =
 		useActorsTable()
 	return (
-		<Meta title='Администратор - актёры'>
+		<Meta title="Администратор - актёры">
 			<AdminNavigation />
-			<Heading variant='h2' title='Актёры' className={styles.title} />
+			<Heading variant="h2" title="Актёры" className={styles.title} />
 			<AdminHeader
-				link={EnumContstantsAdminUrl.ACTOR_СREATE}
+				link={AdminActorsUrl.СREATE}
 				searchTerm={searchTerm}
 				handleSearch={handleSearch}
 				className={styles.header}
 			/>
 			<AdminTable
-				notFoundText='Актёры не найдены'
+				notFoundText="Актёры не найдены"
 				isLoading={isLoading}
 				itemsHeader={['Имя', 'Количество просмотров', 'Действия']}
 				items={data || []}

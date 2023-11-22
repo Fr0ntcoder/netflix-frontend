@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { GenreService } from 'service/genre/genre.service'
 import { TGenreEditInput } from 'service/genre/genre.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminGenresUrl } from '@/shared/constants.enum'
 
 import { toastError } from '@/utils/toast-error'
 
@@ -20,7 +20,7 @@ export const useGenreCreate = () => {
 			},
 			onSuccess() {
 				toastr.success('Обновление жанра', 'Вы успешно изменили жанр')
-				push(EnumContstantsAdminUrl.GENRES)
+				push(AdminGenresUrl.ROOT)
 			},
 		}
 	)

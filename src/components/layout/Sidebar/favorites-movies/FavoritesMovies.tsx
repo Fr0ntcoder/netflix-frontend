@@ -6,7 +6,7 @@ import MoviesLoader from '@/components/layout/sidebar/movies-loader/MoviesLoader
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 
 import { useAuth } from '@/hooks/auth/useAuth'
-import { useMoviesPopular } from '@/hooks/movies/useMoviesPopular'
+import { useFavorites } from '@/hooks/users/user/useFavorites'
 
 import { IClass } from '@/shared/interface/classname.interface'
 
@@ -14,8 +14,7 @@ import styles from './FavoritesMovies.module.scss'
 
 const FavoritesMovies: FC<IClass> = ({ className }) => {
 	const { user } = useAuth()
-	const { data: movies, isLoading, isError } = useMoviesPopular(4)
-
+	const { data: movies, isLoading, isError } = useFavorites()
 	if (!user) {
 		return (
 			<div className={styles.empty}>
@@ -32,7 +31,7 @@ const FavoritesMovies: FC<IClass> = ({ className }) => {
 
 	return (
 		<div className={cn(styles.favorites, className)}>
-			<MoviesList title="Избранные фильмы" movies={movies} />
+			<MoviesList title="Избранные фильмы" movies={movies} link="/favorites" />
 		</div>
 	)
 }

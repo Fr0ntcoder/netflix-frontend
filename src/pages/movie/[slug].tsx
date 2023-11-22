@@ -3,17 +3,22 @@ import { FC } from 'react'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
+import Error404 from '@/components/screens/404/Error404'
 import SingleMovie from '@/components/screens/movie/single-movie/SingleMovie'
 import { TGallery } from '@/components/ui/gallery/gallery.types'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
+import { MovieUrl } from '@/shared/constants.enum'
 
 export type TMoviePage = {
 	movie: TMovie
 	similarMovies: TGallery[]
 }
 const MoviePage: FC<TMoviePage> = ({ movie, similarMovies }) => {
-	return <SingleMovie movie={movie} similarMovies={similarMovies} />
+	return movie ? (
+		<SingleMovie movie={movie} similarMovies={similarMovies} />
+	) : (
+		<Error404 />
+	)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -44,7 +49,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 			.map((item) => ({
 				_id: item._id,
 				poster: item.poster,
-				link: `${EnumContstantsUrl.MOVIE}/${item.slug}`,
+				link: `${MovieUrl.ROOT}/${item.slug}`,
 			}))
 			.slice(0, 6)
 

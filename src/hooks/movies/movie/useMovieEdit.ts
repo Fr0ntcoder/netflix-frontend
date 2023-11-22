@@ -5,7 +5,7 @@ import { toastr } from 'react-redux-toastr'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovieEditInput } from 'service/movie/movie.types'
 
-import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
+import { AdminMoviesUrl } from '@/shared/constants.enum'
 
 import { getKeys } from '@/utils/object/get-keys'
 import { toastError } from '@/utils/toast-error'
@@ -20,13 +20,13 @@ export const useMovieEdit = (setValue: UseFormSetValue<TMovieEditInput>) => {
 		() => MovieService.getById(movieId),
 		{
 			onSuccess({ data }) {
-				getKeys(data).forEach(key => {
+				getKeys(data).forEach((key) => {
 					setValue(key, data[key])
 				})
 			},
 			onError(error) {
 				toastError(error, 'Ошибка получения фильма')
-			}
+			},
 		}
 	)
 
@@ -39,12 +39,12 @@ export const useMovieEdit = (setValue: UseFormSetValue<TMovieEditInput>) => {
 			},
 			onSuccess() {
 				toastr.success('Обновление фильма', 'Вы успешно изменили жанр фильма')
-				push(EnumContstantsAdminUrl.MOVIES)
-			}
+				push(AdminMoviesUrl.ROOT)
+			},
 		}
 	)
 
-	const onSubmit: SubmitHandler<TMovieEditInput> = async data => {
+	const onSubmit: SubmitHandler<TMovieEditInput> = async (data) => {
 		await mutateAsync(data)
 	}
 

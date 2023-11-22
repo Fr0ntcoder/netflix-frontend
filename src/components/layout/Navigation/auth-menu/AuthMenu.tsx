@@ -8,6 +8,8 @@ import Icon from '@/components/ui/icon/Icon'
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useActions } from '@/hooks/other/useActions'
 
+import { AuthUrl } from '@/shared/constants.enum'
+
 import styles from './AuthMenu.module.scss'
 
 const AuthMenu: FC = () => {
@@ -22,33 +24,33 @@ const AuthMenu: FC = () => {
 		<div className={styles.auth}>
 			<h3 className={styles.title}>Общие</h3>
 			{!user ? (
-				<Link href='/auth' className={styles.status}>
-					<Icon name='MdExitToApp' />
+				<Link href={AuthUrl.ROOT} className={styles.status}>
+					<Icon name="MdExitToApp" />
 					Войти
 				</Link>
 			) : (
 				<div className={styles.wrap}>
 					<Link
-						href='/profile'
+						href="/profile"
 						className={cn(styles.status, {
-							[styles.active]: pathname === '/profile'
+							[styles.active]: pathname === '/profile',
 						})}
 					>
-						<Icon name='MdAccountCircle' />
+						<Icon name="MdAccountCircle" />
 						Профиль
 					</Link>
 					<button className={styles.status} onClick={onHandler}>
-						<Icon name='MdExitToApp' />
+						<Icon name="MdExitToApp" />
 						Выйти
 					</button>
 					{user.isAdmin && (
 						<Link
-							href='/admin'
+							href="/admin"
 							className={cn(styles.status, {
-								[styles.active]: pathname === '/admin'
+								[styles.active]: pathname === '/admin',
 							})}
 						>
-							<Icon name='MdLockOutline' />
+							<Icon name="MdLockOutline" />
 							Админ панель
 						</Link>
 					)}

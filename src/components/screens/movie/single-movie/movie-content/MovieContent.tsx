@@ -2,10 +2,13 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
+import FavoriteButton from '@/components/ui/button/favorite-button/FavoriteButton'
 import Heading from '@/components/ui/heading/Heading'
 import Icon from '@/components/ui/icon/Icon'
 
-import { EnumContstantsUrl } from '@/shared/constants.enum'
+import { useAuth } from '@/hooks/auth/useAuth'
+
+import { ActorUrl, GenreUrl } from '@/shared/constants.enum'
 
 import styles from './MovieContent.module.scss'
 
@@ -13,6 +16,7 @@ type TMovieContent = {
 	content: TMovie
 }
 const MovieContent: FC<TMovieContent> = ({ content }) => {
+	const { user } = useAuth()
 	return (
 		<div className={styles.content}>
 			<div className={styles.left}>
@@ -27,7 +31,7 @@ const MovieContent: FC<TMovieContent> = ({ content }) => {
 						<span className={styles.name}>Жанры: </span>
 						<span className={styles.text}>
 							{content.genres.map((genre, i) => (
-								<Link href={`${EnumContstantsUrl.GENRE}/${genre.slug}`} key={i}>
+								<Link href={`${GenreUrl.ROOT}/${genre.slug}`} key={i}>
 									{i !== content.genres.length - 1
 										? `${genre.name}, `
 										: genre.name}
@@ -39,7 +43,7 @@ const MovieContent: FC<TMovieContent> = ({ content }) => {
 						<span className={styles.name}>Актёры: </span>
 						<span className={styles.text}>
 							{content.actors.map((actor, i) => (
-								<Link href={`${EnumContstantsUrl.ACTOR}/${actor.slug}`} key={i}>
+								<Link href={`${ActorUrl.ROOT}/${actor.slug}`} key={i}>
 									{i !== content.actors.length - 1 && content.actors.length > 1
 										? `${actor.name},`
 										: actor.name}
@@ -50,6 +54,7 @@ const MovieContent: FC<TMovieContent> = ({ content }) => {
 				</div>
 			</div>
 			<div className={styles.right}>
+				{user && <FavoriteButton movieId={content._id} />}
 				<div className={styles.rating}>
 					<Icon name="MdOutlineStar" />
 					{content.rating.toFixed(1)}
