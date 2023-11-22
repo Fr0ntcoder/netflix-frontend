@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
-import { TActorEditInput } from 'service/actors/actor.types'
-import { ActorsService } from 'service/actors/actors.service'
+import { ActorService } from 'service/actor/actor.service'
+import { TActorEditInput } from 'service/actor/actor.types'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
@@ -17,22 +17,22 @@ export const useActorEdit = (setValue: UseFormSetValue<TActorEditInput>) => {
 
 	const { isLoading } = useQuery(
 		['actor', actorId],
-		() => ActorsService.getById(actorId),
+		() => ActorService.getById(actorId),
 		{
 			onSuccess({ data }) {
-				getKeys(data).forEach(key => {
+				getKeys(data).forEach((key) => {
 					setValue(key, data[key])
 				})
 			},
 			onError(error) {
 				toastError(error, 'Ошибка создания актёра')
-			}
+			},
 		}
 	)
 
 	const { mutateAsync } = useMutation(
 		['update actor'],
-		(data: TActorEditInput) => ActorsService.update(actorId, data),
+		(data: TActorEditInput) => ActorService.update(actorId, data),
 		{
 			onError(error) {
 				toastError(error, 'Ошибка обновления')
@@ -40,11 +40,11 @@ export const useActorEdit = (setValue: UseFormSetValue<TActorEditInput>) => {
 			onSuccess() {
 				toastr.success('Обновление актёра', 'Вы успешно изменили актёра')
 				push(EnumContstantsAdminUrl.ACTORS)
-			}
+			},
 		}
 	)
 
-	const onSubmit: SubmitHandler<TActorEditInput> = async data => {
+	const onSubmit: SubmitHandler<TActorEditInput> = async (data) => {
 		await mutateAsync(data)
 	}
 

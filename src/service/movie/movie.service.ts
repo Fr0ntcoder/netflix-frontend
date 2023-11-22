@@ -1,5 +1,5 @@
 import axiosInstance, { axiosDefault } from 'api/api.config'
-import { TGenreEditInput } from 'service/genres/genres.types'
+import { TGenreEditInput } from 'service/genre/genre.types'
 import { TMovie, TMovieEditInput } from 'service/movie/movie.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
@@ -34,14 +34,18 @@ export const MovieService = {
 			method: 'GET',
 		})
 	},
-
+	async getBySlug(slug: string) {
+		return axiosInstance<TMovie>({
+			url: `${EnumContstantsUrl.MOVIES_SLUG}/${slug}`,
+			method: 'GET',
+		})
+	},
 	async getById(id: string) {
 		return axiosInstance<TMovieEditInput>({
 			url: `${EnumContstantsUrl.MOVIES}/${id}`,
 			method: 'GET',
 		})
 	},
-
 	async delete(id: string) {
 		return axiosInstance<string>({
 			url: `${EnumContstantsUrl.MOVIES}/${id}`,

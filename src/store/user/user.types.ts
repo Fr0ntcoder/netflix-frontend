@@ -1,4 +1,4 @@
-import { TUser } from 'service/users/users.types'
+import { TUser } from 'service/user/user.types'
 
 export type TUserState = {
 	email: string

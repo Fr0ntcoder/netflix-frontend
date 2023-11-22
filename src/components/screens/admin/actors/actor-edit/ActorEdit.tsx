@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { TActorEditInput } from 'service/actors/actor.types'
+import { TActorEditInput } from 'service/actor/actor.types'
 
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
 import Button from '@/components/ui/button/Button'
@@ -29,24 +29,24 @@ const ActorEdit: FC = () => {
 		formState: { errors },
 		control,
 		setValue,
-		getValues
+		getValues,
 	} = useForm<TActorEditInput>({ mode: 'onChange' })
 
 	const { isLoading, onSubmit } = useActorEdit(setValue)
 	return (
-		<Meta title='Администратор - редактирование актёра' description=''>
+		<Meta title="Администратор - редактирование актёра" description="">
 			<AdminNavigation />
 			<Heading
-				title='Редактирование Актёра'
-				variant='h3'
+				title="Редактирование Актёра"
+				variant="h3"
 				className={styles.title}
 			/>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 				<div className={styles.top}>
 					<InputField
-						placeholder='Имя'
+						placeholder="Имя"
 						{...register('name', {
-							required: 'Имя обязателено'
+							required: 'Имя обязателено',
 						})}
 						error={errors.name}
 						className={styles.input}
@@ -62,23 +62,23 @@ const ActorEdit: FC = () => {
 				<div className={styles.bottom}>
 					<Controller
 						control={control}
-						name='photo'
-						defaultValue=''
+						name="photo"
+						defaultValue=""
 						render={({ field: { value, onChange }, fieldState: { error } }) => (
 							<UploadField
 								onChange={onChange}
 								value={value}
 								error={error}
-								folder='actors'
-								placeholder='Фото'
+								folder="actors"
+								placeholder="Фото"
 							/>
 						)}
 						rules={{
-							required: 'Загрузите фото'
+							required: 'Загрузите фото',
 						}}
 					/>
 				</div>
-				<Button variant='red' className={styles.btn}>
+				<Button variant="red" className={styles.btn}>
 					Обновить
 				</Button>
 			</form>

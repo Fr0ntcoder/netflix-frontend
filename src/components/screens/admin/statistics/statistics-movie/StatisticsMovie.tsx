@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import StatisticsMovieLoader from '@/components/screens/admin/statistics/statistics-movie/statistics-movie-loader/StatisticsMovieLoader'
+import StatisticsLoader from '@/components/screens/admin/statistics/statistics-loader/StatisticsLoader'
 import ErrorsLoader from '@/components/ui/errors/errors-loader/ErrorsLoader'
 import Heading from '@/components/ui/heading/Heading'
 import NotFound from '@/components/ui/not-found/NotFound'
@@ -16,7 +16,7 @@ const StatisticsMovie: FC = () => {
 	const { data, isLoading, isError } = useMoviesPopular(1)
 
 	if (isLoading) {
-		return <StatisticsMovieLoader />
+		return <StatisticsLoader />
 	}
 
 	if (isError) {

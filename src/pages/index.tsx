@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
-import { ActorsService } from 'service/actors/actors.service'
+import { ActorService } from 'service/actor/actor.service'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	try {
 		const { data: moviesData } = await MovieService.getAll()
 		const { data: moviesPopularData } = await MovieService.getMostPopular()
-		const { data: actorsData } = await ActorsService.getAll()
+		const { data: actorsData } = await ActorService.getAll()
 		const movies: TMovie[] = moviesData.slice(0, 4)
 		const popularMovies: TGallery[] = moviesPopularData
 			.slice(0, 3)

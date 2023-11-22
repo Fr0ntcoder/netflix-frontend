@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query'
-import { GenresService } from 'service/genres/genres.service'
+import { GenreService } from 'service/genre/genre.service'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
 export const useGenresPopular = () => {
-	return useQuery(['genres popular'], () => GenresService.getPopular(), {
+	return useQuery(['genres popular'], () => GenreService.getPopular(), {
 		select: ({ data }) =>
 			data
 				.filter((genre) => genre.icon)

@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { FC } from 'react'
-import { TActor } from 'service/actors/actor.types'
-import { ActorsService } from 'service/actors/actors.service'
+import { ActorService } from 'service/actor/actor.service'
+import { TActor } from 'service/actor/actor.types'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
@@ -17,7 +17,7 @@ const ActorPage: FC<TActorPage> = ({ actor, movies }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	try {
-		const { data: actors } = await ActorsService.getAll()
+		const { data: actors } = await ActorService.getAll()
 		const paths = actors.map((g) => ({
 			params: { slug: g.slug },
 		}))
@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
-		const { data: actor } = await ActorsService.getBySlug(String(params?.slug))
+		const { data: actor } = await ActorService.getBySlug(String(params?.slug))
 		const { data: movies } = await MovieService.getByActor(actor._id)
 		return {
 			props: {

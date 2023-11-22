@@ -1,5 +1,5 @@
-import { TActor } from 'service/actors/actor.types'
-import { TGenre } from 'service/genres/genres.types'
+import { TActor } from 'service/actor/actor.types'
+import { TGenre } from 'service/genre/genre.types'
 
 type TMovieParameters = {
 	year: number

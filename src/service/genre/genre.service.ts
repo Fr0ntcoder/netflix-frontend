@@ -1,11 +1,11 @@
 import axiosInstance, { axiosDefault } from 'api/api.config'
-import { TGenre } from 'service/genres/genres.types'
+import { TGenre } from 'service/genre/genre.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
-import { TGenreEditInput } from './genres.types'
+import { TGenreEditInput } from './genre.types'
 
-export const GenresService = {
+export const GenreService = {
 	async getAll(searchTerm?: string) {
 		return await axiosDefault<TGenre[]>({
 			url: EnumContstantsUrl.GENRES,

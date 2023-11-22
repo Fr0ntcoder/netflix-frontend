@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { ActorsService } from 'service/actors/actors.service'
+import { ActorService } from 'service/actor/actor.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
@@ -17,16 +17,16 @@ export const useActorsTable = () => {
 
 	const queryData = useQuery(
 		['actors table', debouncedSearch],
-		() => ActorsService.getAll(debouncedSearch),
+		() => ActorService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
 					(genre): TSearch => ({
 						_id: genre._id,
 						link: `${EnumContstantsAdminUrl.ACTOR_EDIT}/${genre._id}`,
-						items: [genre.name, String(genre.countMovies)]
+						items: [genre.name, String(genre.countMovies)],
 					})
-				)
+				),
 		}
 	)
 
@@ -36,11 +36,11 @@ export const useActorsTable = () => {
 
 	const { mutateAsync: deleteAsync } = useMutation(
 		['delete actors table'],
-		(id: string) => ActorsService.delete(id),
+		(id: string) => ActorService.delete(id),
 		{
 			onSuccess: () => {
 				queryClient.invalidateQueries('actors table')
-			}
+			},
 		}
 	)
 
@@ -49,7 +49,7 @@ export const useActorsTable = () => {
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
 		}),
 		[queryData, searchTerm, deleteAsync]
 	)

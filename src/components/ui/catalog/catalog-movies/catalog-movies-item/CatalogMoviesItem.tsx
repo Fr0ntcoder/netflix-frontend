@@ -16,7 +16,7 @@ type TCatalogMoviesItem = {
 const CatalogMoviesItem: FC<TCatalogMoviesItem> = ({ movie }) => {
 	return (
 		<Link
-			href={`${EnumContstantsUrl.MOVIES_SLUG}/${movie.slug}`}
+			href={`${EnumContstantsUrl.MOVIE}/${movie.slug}`}
 			className={styles.item}
 		>
 			<Image

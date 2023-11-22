@@ -1,10 +1,10 @@
-import { TActor, TActorEditInput } from 'service/actors/actor.types'
+import { TActor, TActorEditInput } from 'service/actor/actor.types'
 
 import { EnumContstantsUrl } from '@/shared/constants.enum'
 
 import axiosInstance, { axiosDefault } from '@/api/api.config'
 
-export const ActorsService = {
+export const ActorService = {
 	async getAll(searchTerm?: string) {
 		return axiosDefault<TActor[]>({
 			url: EnumContstantsUrl.ACTORS,

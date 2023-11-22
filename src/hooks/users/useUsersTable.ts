@@ -1,6 +1,6 @@
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { UsersService } from 'service/users/users.service'
+import { UserService } from 'service/user/user.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
@@ -17,16 +17,16 @@ export const useUsersTable = () => {
 
 	const queryData = useQuery(
 		['users table', debouncedSearch],
-		() => UsersService.getAll(debouncedSearch),
+		() => UserService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
 					(user): TSearch => ({
 						_id: user._id,
 						link: `${EnumContstantsAdminUrl.USER_EDIT}/${user._id}`,
-						items: [user.email, dateFormat(user.createdAt)]
+						items: [user.email, dateFormat(user.createdAt)],
 					})
-				)
+				),
 		}
 	)
 
@@ -36,11 +36,11 @@ export const useUsersTable = () => {
 
 	const { mutateAsync: deleteAsync } = useMutation(
 		['delete users table'],
-		(id: string) => UsersService.delete(id),
+		(id: string) => UserService.delete(id),
 		{
 			onSuccess: () => {
-				queryClient.invalidateQueries('users')
-			}
+				queryClient.invalidateQueries('users table')
+			},
 		}
 	)
 
@@ -49,7 +49,7 @@ export const useUsersTable = () => {
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
 		}),
 		[queryData, searchTerm, deleteAsync]
 	)

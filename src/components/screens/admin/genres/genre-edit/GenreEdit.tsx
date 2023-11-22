@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { TGenreEditInput } from 'service/genres/genres.types'
+import { TGenreEditInput } from 'service/genre/genre.types'
 import { stripHtml } from 'string-strip-html'
 
 import AdminNavigation from '@/components/ui/admin/admin-navigation/AdminNavigation'
@@ -28,32 +28,32 @@ const GenreEdit: FC = () => {
 		formState: { errors },
 		control,
 		setValue,
-		getValues
+		getValues,
 	} = useForm<TGenreEditInput>({ mode: 'onChange' })
 
 	const { isLoading, onSubmit } = useGenreEdit(setValue)
 	return (
-		<Meta title='Администратор - редактирование жанра' description=''>
+		<Meta title="Администратор - редактирование жанра" description="">
 			<AdminNavigation />
 			<Heading
-				title='Редактирование жанра'
-				variant='h3'
+				title="Редактирование жанра"
+				variant="h3"
 				className={styles.title}
 			/>
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 				<div className={styles.top}>
 					<InputField
-						placeholder='Имя'
+						placeholder="Имя"
 						{...register('name', {
-							required: 'Имя обязателено'
+							required: 'Имя обязателено',
 						})}
 						error={errors.name}
 						className={styles.input}
 					/>
 					<InputField
-						placeholder='Иконка'
+						placeholder="Иконка"
 						{...register('icon', {
-							required: 'Иконка обязателена'
+							required: 'Иконка обязателена',
 						})}
 						error={errors.icon}
 						className={styles.input}
@@ -69,25 +69,25 @@ const GenreEdit: FC = () => {
 				<div className={styles.editor}>
 					<Controller
 						control={control}
-						name='description'
-						defaultValue=''
+						name="description"
+						defaultValue=""
 						render={({ field: { value, onChange }, fieldState: { error } }) => (
 							<DynamicTextEditor
 								onChange={onChange}
 								value={value}
 								error={error}
-								placeholder='Описание'
+								placeholder="Описание"
 							/>
 						)}
 						rules={{
 							validate: {
-								required: v =>
-									(v && stripHtml(v).result.length > 0) || 'Введите описание'
-							}
+								required: (v) =>
+									(v && stripHtml(v).result.length > 0) || 'Введите описание',
+							},
 						}}
 					/>
 				</div>
-				<Button variant='red' className={styles.btn}>
+				<Button variant="red" className={styles.btn}>
 					Обновить
 				</Button>
 			</form>

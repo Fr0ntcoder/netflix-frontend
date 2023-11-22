@@ -16,6 +16,8 @@ export enum EnumContstantsUrl {
 	ACTORS_SLUG = '/actors/by-slug',
 	STATISTICS = '/statistics',
 	MOVIES_POPULAR = '/movies/most-popular',
+	RATINGS = '/ratings',
+	RATINGS_SET = '/ratings/set-rating',
 }
 
 export enum EnumContstantsAdminUrl {

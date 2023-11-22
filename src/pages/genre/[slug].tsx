@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { FC } from 'react'
-import { GenresService } from 'service/genres/genres.service'
-import { TGenre } from 'service/genres/genres.types'
+import { GenreService } from 'service/genre/genre.service'
+import { TGenre } from 'service/genre/genre.types'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
@@ -23,7 +23,7 @@ const GenrePage: FC<TGenrePage> = ({ genre, movies }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	try {
-		const { data: genres } = await GenresService.getAll()
+		const { data: genres } = await GenreService.getAll()
 		const paths = genres.map((g) => ({
 			params: { slug: g.slug },
 		}))
@@ -40,7 +40,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 	try {
-		const { data: genre } = await GenresService.getBySlug(String(params?.slug))
+		const { data: genre } = await GenreService.getBySlug(String(params?.slug))
 		const { data: movies } = await MovieService.getByGenres([genre._id])
 		return {
 			props: {

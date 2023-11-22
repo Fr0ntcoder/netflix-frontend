@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import { SubmitHandler } from 'react-hook-form'
 import { useMutation } from 'react-query'
 import { toastr } from 'react-redux-toastr'
-import { GenresService } from 'service/genres/genres.service'
-import { TGenreEditInput } from 'service/genres/genres.types'
+import { GenreService } from 'service/genre/genre.service'
+import { TGenreEditInput } from 'service/genre/genre.types'
 
 import { EnumContstantsAdminUrl } from '@/shared/constants.enum'
 
@@ -13,7 +13,7 @@ export const useGenreCreate = () => {
 	const { push } = useRouter()
 	const { mutateAsync } = useMutation(
 		['create genre'],
-		(data: TGenreEditInput) => GenresService.create(data),
+		(data: TGenreEditInput) => GenreService.create(data),
 		{
 			onError(error) {
 				toastError(error, 'Этот жанр уже существует')
@@ -21,11 +21,11 @@ export const useGenreCreate = () => {
 			onSuccess() {
 				toastr.success('Обновление жанра', 'Вы успешно изменили жанр')
 				push(EnumContstantsAdminUrl.GENRES)
-			}
+			},
 		}
 	)
 
-	const onSubmit: SubmitHandler<TGenreEditInput> = async data => {
+	const onSubmit: SubmitHandler<TGenreEditInput> = async (data) => {
 		await mutateAsync(data)
 	}
 

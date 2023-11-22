@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { GenresService } from 'service/genres/genres.service'
+import { GenreService } from 'service/genre/genre.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
 
@@ -19,7 +19,7 @@ export const useGenresTable = () => {
 
 	const queryData = useQuery(
 		['genres table', debouncedSearch],
-		() => GenresService.getAll(debouncedSearch),
+		() => GenreService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
@@ -29,10 +29,10 @@ export const useGenresTable = () => {
 						items: [
 							genre.name,
 							trimText(genre.description, 20),
-							dateFormat(genre.createdAt)
-						]
+							dateFormat(genre.createdAt),
+						],
 					})
-				)
+				),
 		}
 	)
 
@@ -42,11 +42,11 @@ export const useGenresTable = () => {
 
 	const { mutateAsync: deleteAsync } = useMutation(
 		['delete genres table'],
-		(id: string) => GenresService.delete(id),
+		(id: string) => GenreService.delete(id),
 		{
 			onSuccess: () => {
 				queryClient.invalidateQueries('genres table')
-			}
+			},
 		}
 	)
 
@@ -55,7 +55,7 @@ export const useGenresTable = () => {
 			handleSearch,
 			...queryData,
 			searchTerm,
-			deleteAsync
+			deleteAsync,
 		}),
 		[queryData, searchTerm, deleteAsync]
 	)
