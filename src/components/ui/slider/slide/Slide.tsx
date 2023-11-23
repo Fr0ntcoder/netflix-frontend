@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
-import Heading from '@/ui/Heading/Heading'
+import Heading from '@/ui/heading/Heading'
 
 import { MovieUrl } from '@/shared/constants.enum'
 

@@ -8,8 +8,8 @@ import AdminNavigation from '@/ui/Admin/AdminNavigation/AdminNavigation'
 import Button from '@/ui/Buttons/Button/Button'
 import InputField from '@/ui/FormElements/InputField/InputField'
 import SlugField from '@/ui/FormElements/SlugField/SlugField'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useGenreEdit } from '@/hooks/genres/genre/useGenreEdit'
 

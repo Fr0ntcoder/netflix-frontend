@@ -3,9 +3,9 @@ import { FC } from 'react'
 
 import FavoriteItem from '@/screens/Favorites/FavoriteItem/FavoriteItem'
 
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import NotFound from '@/ui/NotFound/NotFound'
+import Heading from '@/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useFavorites } from '@/hooks/users/user/useFavorites'

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import Heading from '@/ui/Heading/Heading'
 import AuthButton from '@/ui/VideoPlayer/AuthButton/AuthButton'
+import Heading from '@/ui/heading/Heading'
 
 import styles from './AuthPlaceholder.module.scss'
 

@@ -3,9 +3,9 @@ import { TMovie } from 'service/movie/movie.types'
 
 import Gallery from '@/ui/Gallery/Gallery'
 import { TGallery } from '@/ui/Gallery/gallery.types'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
 import Slider from '@/ui/Slider/Slider'
+import Heading from '@/ui/heading/Heading'
 
 import styles from './Home.module.scss'
 

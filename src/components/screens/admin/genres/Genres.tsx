@@ -3,8 +3,8 @@ import { FC } from 'react'
 import AdminHeader from '@/ui/Admin/AdminHeader/AdminHeader'
 import AdminNavigation from '@/ui/Admin/AdminNavigation/AdminNavigation'
 import AdminTable from '@/ui/Admin/AdminTable/AdminTable'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useGenresTable } from '@/hooks/genres/useGenresTable'
 

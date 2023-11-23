@@ -3,8 +3,8 @@ import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
 import FavoriteButton from '@/ui/Buttons/FavoriteButton/FavoriteButton'
-import Heading from '@/ui/Heading/Heading'
 import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
+import Heading from '@/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 

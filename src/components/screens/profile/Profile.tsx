@@ -4,8 +4,8 @@ import { TProfileInput } from 'service/user/user.types'
 
 import Button from '@/ui/Buttons/Button/Button'
 import InputField from '@/ui/FormElements/InputField/InputField'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useProfile } from '@/hooks/profile/useProfile'
 

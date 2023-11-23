@@ -7,8 +7,8 @@ import Button from '@/ui/Buttons/Button/Button'
 import InputField from '@/ui/FormElements/InputField/InputField'
 import SlugField from '@/ui/FormElements/SlugField/SlugField'
 import UploadField from '@/ui/FormElements/UploadField/UploadField'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useActorCreate } from '@/hooks/actors/actor/useActorCreate'
 

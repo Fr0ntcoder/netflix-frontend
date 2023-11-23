@@ -3,8 +3,8 @@ import { FC } from 'react'
 import CatalogMoviesItem from '@/ui/Catalog/CatalogMovies/CatalogMoviesItem/CatalogMoviesItem'
 import { TCatalogMovie } from '@/ui/Catalog/CatalogMovies/catalog-movies.types'
 import Description from '@/ui/Description/Description'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import styles from './CatalogMovies.module.scss'
 

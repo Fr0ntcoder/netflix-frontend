@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { FC } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
-import Heading from '@/ui/Heading/Heading'
 import AuthButton from '@/ui/VideoPlayer/AuthButton/AuthButton'
+import Heading from '@/ui/heading/Heading'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useRating } from '@/hooks/rating/useRating'

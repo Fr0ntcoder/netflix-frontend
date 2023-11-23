@@ -6,8 +6,8 @@ import MovieContent from '@/screens/Movie/SingleMovie/MovieContent/MovieContent'
 
 import Banner from '@/ui/Banner/Banner'
 import Gallery from '@/ui/Gallery/Gallery'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useOpenedCount } from '@/hooks/movies/useOpenedCount'
 

@@ -3,8 +3,8 @@ import { FC } from 'react'
 import AdminNavigation from '@/ui/Admin/AdminNavigation/AdminNavigation'
 import AdminTable from '@/ui/Admin/AdminTable/AdminTable'
 import SearchField from '@/ui/FormElements/SearchField/SearchField'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useUsersTable } from '@/hooks/users/useUsersTable'
 

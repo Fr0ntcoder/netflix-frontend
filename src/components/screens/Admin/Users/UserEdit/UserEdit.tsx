@@ -5,8 +5,8 @@ import { TUserInput } from 'service/user/user.types'
 import Button from '@/ui/Buttons/Button/Button'
 import InputField from '@/ui/FormElements/InputField/InputField'
 import SwitchField from '@/ui/FormElements/SwitchField/SwitchField'
-import Heading from '@/ui/Heading/Heading'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import { useUserEdit } from '@/hooks/users/user/useUserEdit'
 

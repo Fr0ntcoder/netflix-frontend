@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
-import Heading from '@/ui/Heading/Heading'
 import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 import Meta from '@/ui/Meta/Meta'
+import Heading from '@/ui/heading/Heading'
 
 import styles from './Error404.module.scss'
 

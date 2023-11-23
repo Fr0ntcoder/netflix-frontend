@@ -4,8 +4,8 @@ import { FC } from 'react'
 import StatisticsLoader from '@/screens/Admin/Statistics/StatisticsLoader/StatisticsLoader'
 
 import ErrorsLoader from '@/ui/Errors/ErrorLoader/ErrorsLoader'
-import Heading from '@/ui/Heading/Heading'
 import NotFound from '@/ui/NotFound/NotFound'
+import Heading from '@/ui/heading/Heading'
 
 import { useMoviesPopular } from '@/hooks/movies/useMoviesPopular'
 
