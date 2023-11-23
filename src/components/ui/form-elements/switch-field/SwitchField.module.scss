@@ -1,0 +1,29 @@
+.btn {
+	position: relative;
+	width: 50px;
+	height: 20px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+	transition: background-color 0.3s ease-in-out;
+	background: $color-gray-600;
+	cursor: pointer;
+
+	&.active {
+		background: green;
+		.circle {
+			transform: translate(30px, 0);
+		}
+	}
+}
+
+.circle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	transition: transform 0.3s ease-in-out;
+	transform: translate(0, 0);
+	background: $color-gray-500;
+}

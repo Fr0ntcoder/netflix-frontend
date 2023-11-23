@@ -1,0 +1,21 @@
+.search {
+	display: flex;
+	max-width: 250px;
+	align-items: center;
+	padding: 10px 15px;
+	border: 1px solid $color-gray-700;
+	border-radius: 50px;
+
+	svg {
+		font-size: 30px;
+		margin-right: 5px;
+		color: $color-gray-700;
+	}
+	input {
+		width: 100%;
+		border: none;
+		outline: none;
+		background: none;
+		color: #fff;
+	}
+}

@@ -1,0 +1,38 @@
+.toolbar {
+	display: flex;
+	align-items: center;
+	padding: 15px;
+	border: none;
+	border-radius: 10px;
+	background: $color-gray-950;
+
+	.rdw-inline-wrapper {
+		margin-bottom: 0;
+	}
+}
+
+.text {
+	display: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	color: $color-gray-600;
+}
+
+.editor {
+	display: block;
+	height: 300px;
+	font-size: 14px;
+	padding: 10px;
+	line-height: 2;
+	border: 1px solid $color-gray-700;
+	border-radius: 10px;
+	overflow: hidden;
+	color: #fff;
+}
+
+.error {
+	font-size: 12px;
+	margin-top: 15px;
+	color: $color-primary;
+}

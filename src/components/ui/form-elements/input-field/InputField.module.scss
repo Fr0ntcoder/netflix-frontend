@@ -1,0 +1,38 @@
+.input {
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	display: flex;
+	flex-direction: column;
+}
+
+.text {
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	color: $color-gray-600;
+}
+
+.field {
+	display: block;
+	padding: 5px 10px 10px 0;
+	transition: border 0.3s ease-in-out;
+	border-bottom: 1px solid $color-gray-700;
+	color: #fff;
+
+	&:focus {
+		border-color: $color-primary;
+	}
+
+	&.invalid {
+		border-color: $color-primary;
+	}
+}
+
+.error {
+	font-size: 12px;
+	margin-top: 10px;
+	color: $color-primary;
+}

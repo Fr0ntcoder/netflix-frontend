@@ -1,0 +1,18 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 10px;
+	padding: 10px 15px;
+	color: #fff;
+	cursor: pointer;
+
+	&.red {
+		background: $color-primary;
+	}
+
+	&.yellow {
+		background: $color-yellow;
+	}
+}

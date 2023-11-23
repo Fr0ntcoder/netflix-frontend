@@ -22,6 +22,7 @@
 			"@/hooks/*": ["hooks/*"],
 			"@/shared/*": ["shared/*"],
 			"@/services/*": ["services/*"],
+			"@/api/*": ["api/*"],
 			"@/store/*": ["store/*"],
 			"@/utils/*": ["utils/*"],
 			"@/assets/*": ["assets/*"]
