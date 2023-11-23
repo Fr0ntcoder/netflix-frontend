@@ -1,4 +1,4 @@
-import { TMenuItem } from '@/layout/Navigation/Menu/MenuItem/MenuItem'
+import { TMenuItem } from '@/layout/Navigation/MainMenu/MenuItem'
 
 export const firstMenu: TMenuItem[] = [
 	{
