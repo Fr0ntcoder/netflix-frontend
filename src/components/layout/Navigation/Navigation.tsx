@@ -20,6 +20,7 @@ const Navigation: FC = () => {
 			<Logo className={styles.logo} />
 			<Menu title="Меню" items={firstMenu} className={styles.menu} />
 			<PopularGenres />
+
 			<DynamicAuthMenu />
 		</nav>
 	)
