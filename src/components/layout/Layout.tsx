@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
 
-import Navigation from '@/components/layout/navigation/Navigation'
-import Sidebar from '@/components/layout/sidebar/Sidebar'
+import Navigation from '@/layout/Navigation/Navigation'
+import Sidebar from '@/layout/Sidebar/Sidebar'
 
 import styles from './Layout.module.scss'
 

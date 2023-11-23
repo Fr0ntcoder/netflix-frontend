@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Favorites from '@/components/screens/favorites/Favorites'
+import Favorites from '@/screens/Favorites/Favorites'
 
 const FavoritesPage: NextPage = () => {
 	return <Favorites />

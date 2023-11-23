@@ -8,7 +8,7 @@
 	"plugins": ["@trivago/prettier-plugin-sort-imports"],
 	"importOrder": [
 		"<THIRD_PARTY_MODULES>",
-		"^@/components/(.*)$",
+		"^@/layout/(.*)$",
 		"^@/screens/(.*)$",
 		"^@/ui/(.*)$",
 		"^@/hooks/(.*)$",

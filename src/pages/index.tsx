@@ -3,8 +3,9 @@ import { ActorService } from 'service/actor/actor.service'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
-import Home, { THome } from '@/components/screens/home/Home'
-import { TGallery } from '@/components/ui/gallery/gallery.types'
+import Home, { THome } from '@/screens/Home/Home'
+
+import { TGallery } from '@/ui/Gallery/gallery.types'
 
 import { ActorUrl, MovieUrl } from '@/shared/constants.enum'
 

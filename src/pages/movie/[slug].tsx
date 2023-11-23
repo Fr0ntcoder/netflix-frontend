@@ -3,9 +3,10 @@ import { FC } from 'react'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
-import Error404 from '@/components/screens/404/Error404'
-import SingleMovie from '@/components/screens/movie/single-movie/SingleMovie'
-import { TGallery } from '@/components/ui/gallery/gallery.types'
+import Error404 from '@/screens/404/Error404'
+import SingleMovie from '@/screens/Movie/SingleMovie/SingleMovie'
+
+import { TGallery } from '@/ui/Gallery/gallery.types'
 
 import { MovieUrl } from '@/shared/constants.enum'
 

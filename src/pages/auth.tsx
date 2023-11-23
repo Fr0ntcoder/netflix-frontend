@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import Auth from '@/components/screens/auth/Auth'
+import Auth from '@/screens/Auth/Auth'
 
 const AuthPage: NextPage = () => {
 	return <Auth />

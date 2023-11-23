@@ -5,7 +5,7 @@ import { FC } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 
-import Layout from '@/components/layout/Layout'
+import Layout from '@/layout/Layout'
 
 import { TypeComponentAuthField } from '@/shared/types/auth.types'
 
@@ -14,9 +14,9 @@ import { store } from '@/store/store'
 const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
-			refetchOnWindowFocus: false
-		}
-	}
+			refetchOnWindowFocus: false,
+		},
+	},
 })
 
 const MainProvider: FC<TypeComponentAuthField> = ({ children, Component }) => {
