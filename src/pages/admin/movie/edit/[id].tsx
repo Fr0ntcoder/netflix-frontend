@@ -1,4 +1,4 @@
-import MovieEdit from '@/components/screens/admin/movies/movie-edit/MovieEdit'
+import MovieEdit from '@/screens/Admin/Movies/MovieEdit/MovieEdit'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

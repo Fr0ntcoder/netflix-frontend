@@ -1,4 +1,4 @@
-import Genres from '@/components/screens/admin/genres/Genres'
+import Genres from '@/screens/Admin/Genres/Genres'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

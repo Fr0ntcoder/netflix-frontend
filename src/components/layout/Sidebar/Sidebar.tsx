@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 
-import PopularMovies from '@/components/layout/sidebar/popular-movies/PopularMovies'
-import Search from '@/components/layout/sidebar/search/Search'
+import PopularMovies from '@/layout/Sidebar/PopularMovies/PopularMovies'
+import Search from '@/layout/Sidebar/Search/Search'
 
 import styles from './Sidebar.module.scss'
 
 const FavoritesMovies = dynamic(
-	() => import('@/components/layout/sidebar/favorites-movies/FavoritesMovies'),
+	() => import('./FavoritesMovies/FavoritesMovies'),
 	{ ssr: false }
 )
 const Sidebar: FC = () => {

@@ -1,9 +1,7 @@
 import cn from 'classnames'
 import { FC } from 'react'
 
-import MenuItem, {
-	TMenuItem
-} from '@/components/layout/navigation/menu/menu-item/MenuItem'
+import MenuItem, { TMenuItem } from '@/layout/Navigation/Menu/MenuItem/MenuItem'
 
 import { IClass } from '@/shared/interface/classname.interface'
 

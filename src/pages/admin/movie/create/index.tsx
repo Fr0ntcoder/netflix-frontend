@@ -1,4 +1,4 @@
-import MovieCreate from '@/components/screens/admin/movies/movie-create/MovieCreate'
+import MovieCreate from '@/screens/Admin/Movies/MovieCreate/MovieCreate'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 
