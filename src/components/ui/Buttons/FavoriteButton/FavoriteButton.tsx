@@ -4,7 +4,7 @@ import { useMutation, useQueryClient } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 import { UserService } from 'service/user/user.service'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { useFavorites } from '@/hooks/users/user/useFavorites'
 
@@ -49,9 +49,9 @@ const FavoriteButton: FC<TFavoriteButton> = ({ movieId, className }) => {
 	return (
 		<div className={cn(styles.button, className)} onClick={() => mutateAsync()}>
 			{isActive ? (
-				<Icon name="MdOutlineFavorite" />
+				<MaterialIcon name="MdOutlineFavorite" />
 			) : (
-				<Icon name="MdOutlineFavoriteBorder" />
+				<MaterialIcon name="MdOutlineFavoriteBorder" />
 			)}
 		</div>
 	)

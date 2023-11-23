@@ -4,7 +4,7 @@ import { TMovie } from 'service/movie/movie.types'
 
 import FavoriteButton from '@/ui/Buttons/FavoriteButton/FavoriteButton'
 import Heading from '@/ui/Heading/Heading'
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 
@@ -56,7 +56,7 @@ const MovieContent: FC<TMovieContent> = ({ content }) => {
 			<div className={styles.right}>
 				{user && <FavoriteButton movieId={content._id} />}
 				<div className={styles.rating}>
-					<Icon name="MdOutlineStar" />
+					<MaterialIcon name="MdOutlineStar" />
 					{content.rating.toFixed(1)}
 				</div>
 			</div>

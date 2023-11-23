@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useActions } from '@/hooks/other/useActions'
@@ -25,7 +25,7 @@ const AuthMenu: FC = () => {
 			<h3 className={styles.title}>Общие</h3>
 			{!user ? (
 				<Link href={AuthUrl.ROOT} className={styles.status}>
-					<Icon name="MdExitToApp" />
+					<MaterialIcon name="MdExitToApp" />
 					Войти
 				</Link>
 			) : (
@@ -36,11 +36,11 @@ const AuthMenu: FC = () => {
 							[styles.active]: pathname === '/profile',
 						})}
 					>
-						<Icon name="MdAccountCircle" />
+						<MaterialIcon name="MdAccountCircle" />
 						Профиль
 					</Link>
 					<button className={styles.status} onClick={onHandler}>
-						<Icon name="MdExitToApp" />
+						<MaterialIcon name="MdExitToApp" />
 						Выйти
 					</button>
 					{user.isAdmin && (
@@ -50,7 +50,7 @@ const AuthMenu: FC = () => {
 								[styles.active]: pathname === '/admin',
 							})}
 						>
-							<Icon name="MdLockOutline" />
+							<MaterialIcon name="MdLockOutline" />
 							Админ панель
 						</Link>
 					)}

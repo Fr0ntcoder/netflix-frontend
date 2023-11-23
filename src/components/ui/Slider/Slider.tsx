@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 import Slide from '@/ui/Slider/Slide/Slide'
 
 import { useSlider } from '@/hooks/other/useSlider'
@@ -29,7 +29,7 @@ const Slider: FC<TSlider & IClass> = ({ slides, className }) => {
 					className={cn(styles.btn, styles.prev)}
 					onClick={() => handleClick('prev')}
 				>
-					<Icon name="MdArrowBackIos" />
+					<MaterialIcon name="MdArrowBackIos" />
 				</button>
 			)}
 			{isNext && (
@@ -38,7 +38,7 @@ const Slider: FC<TSlider & IClass> = ({ slides, className }) => {
 					className={cn(styles.btn, styles.next)}
 					onClick={() => handleClick('next')}
 				>
-					<Icon name="MdArrowForwardIos" />
+					<MaterialIcon name="MdArrowForwardIos" />
 				</button>
 			)}
 			<AnimatePresence>

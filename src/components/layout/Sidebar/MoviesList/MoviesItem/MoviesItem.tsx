@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import styles from './MoviesItem.module.scss'
 
@@ -23,7 +23,7 @@ const MoviesItem: FC<TMoviesItem> = ({ item }) => {
 					))}
 				</div>
 				<div className={styles.rating}>
-					<Icon name="MdStar" />
+					<MaterialIcon name="MdStar" />
 					<span>{item.rating.toFixed(1)}</span>
 				</div>
 			</div>

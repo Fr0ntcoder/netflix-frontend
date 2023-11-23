@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { FC } from 'react'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 import AuthPlaceholder from '@/ui/VideoPlayer/AuthPlaceholder/AuthPlaceholder'
 import { TVideoPlayer } from '@/ui/VideoPlayer/video.types'
 
@@ -41,13 +41,15 @@ const VideoPlayer: FC<TVideoPlayer & IClass> = ({
 						<div className={styles.control}>
 							<div className={styles.left}>
 								<button onClick={actions.revert} className={styles.btn}>
-									<Icon name="MdHistory" />
+									<MaterialIcon name="MdHistory" />
 								</button>
 								<button onClick={actions.toggleVideo} className={styles.btn}>
-									<Icon name={video.isPlaying ? 'MdPause' : 'MdPlayArrow'} />
+									<MaterialIcon
+										name={video.isPlaying ? 'MdPause' : 'MdPlayArrow'}
+									/>
 								</button>
 								<button onClick={actions.forward} className={styles.btn}>
-									<Icon name="MdUpdate" />
+									<MaterialIcon name="MdUpdate" />
 								</button>
 								<div className={styles.time}>
 									<span className={styles.start}>
@@ -65,7 +67,7 @@ const VideoPlayer: FC<TVideoPlayer & IClass> = ({
 							</div>
 							<div className={styles.right}>
 								<button onClick={actions.fullScreen} className={styles.btn}>
-									<Icon name="MdFullscreen" />
+									<MaterialIcon name="MdFullscreen" />
 								</button>
 							</div>
 						</div>

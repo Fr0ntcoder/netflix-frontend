@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { TypeMaterialIcon } from '@/shared/icons/icon.type'
 
@@ -25,7 +25,7 @@ const MenuItem: FC<{ item: TMenuItem }> = ({ item }) => {
 					[styles.active]: asPath === item.link,
 				})}
 			>
-				<Icon name={item.icon} />
+				<MaterialIcon name={item.icon} />
 				<span className={styles.text}>{item.name}</span>
 			</Link>
 		</li>

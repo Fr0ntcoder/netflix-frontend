@@ -6,10 +6,10 @@ import { TypeMaterialIcon } from '@/shared/icons/icon.type'
 type TIconProps = {
 	name: TypeMaterialIcon
 }
-const Icon: FC<TIconProps> = ({ name }) => {
-	const Icon = MaterialIcons[name]
+const MaterialIcon: FC<TIconProps> = ({ name }) => {
+	const MIcon = MaterialIcons[name]
 
-	return <Icon /> || <MaterialIcons.MdDragIndicator />
+	return <MIcon /> || <MaterialIcons.MdDragIndicator />
 }
 
-export default Icon
+export default MaterialIcon

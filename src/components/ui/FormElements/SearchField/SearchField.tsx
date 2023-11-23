@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { ChangeEvent, FC } from 'react'
 
-import Icon from '@/ui/Icon/Icon'
+import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { IClass } from '@/shared/interface/classname.interface'
 
@@ -18,7 +18,7 @@ const SearchField: FC<IClass & TSearchField> = ({
 }) => {
 	return (
 		<label className={cn(styles.search, className)} htmlFor="search">
-			<Icon name="MdSearch" />
+			<MaterialIcon name="MdSearch" />
 			<input
 				type="search"
 				placeholder="Поиск..."
