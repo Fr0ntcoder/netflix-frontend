@@ -1,6 +1,6 @@
 import Admin from '@/screens/Admin'
 
-import { NextPageAuth } from '@/shared/types/auth.types'
+import { NextPageAuth } from '@/shared/types/auth'
 
 const AdminPage: NextPageAuth = () => {
 	return <Admin />

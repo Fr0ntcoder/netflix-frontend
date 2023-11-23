@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query'
 import { ActorService } from 'service/actor/actor.service'
 
-import { toastError } from '@/utils/toast-error'
+import { TOption } from '@/shared/types/select.types'
 
-import { TOption } from '../../components/ui/form-elements/select/select.types'
+import { toastError } from '@/utils/toast-error'
 
 export const useAdminActor = () => {
 	const queryData = useQuery(['select actor'], () => ActorService.getAll(), {

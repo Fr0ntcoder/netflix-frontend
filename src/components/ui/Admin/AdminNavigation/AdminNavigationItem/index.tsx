@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import { TAdminNavItem } from '@/ui/Admin/AdminNavigation/admin.nav.types'
+import { TAdminNavItem } from '@/shared/types/admin.types'
 
 import styles from './AdminNavigationItem.module.scss'
 

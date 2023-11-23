@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query'
 import { GenreService } from 'service/genre/genre.service'
 
-import { toastError } from '@/utils/toast-error'
+import { TOption } from '@/shared/types/select.types'
 
-import { TOption } from './../../components/ui/form-elements/select/select.types'
+import { toastError } from '@/utils/toast-error'
 
 export const useAdminGenre = () => {
 	const queryData = useQuery(['select genre'], () => GenreService.getAll(), {

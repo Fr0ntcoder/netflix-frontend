@@ -6,8 +6,7 @@ import { ActorService } from 'service/actor/actor.service'
 import { useDebounce } from '@/hooks/other/useDebounce'
 
 import { AdminActorsUrl } from '@/shared/constants.enum'
-
-import { TSearch } from './../../shared/types/search.types'
+import { TSearch } from '@/shared/types/search.types'
 
 export const useActorsTable = () => {
 	const { push } = useRouter()

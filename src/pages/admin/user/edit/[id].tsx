@@ -1,6 +1,6 @@
 import UserEdit from '@/screens/Admin/Users/UserEdit'
 
-import { NextPageAuth } from '@/shared/types/auth.types'
+import { NextPageAuth } from '@/shared/types/auth'
 
 const UserEditPage: NextPageAuth = () => {
 	return <UserEdit />

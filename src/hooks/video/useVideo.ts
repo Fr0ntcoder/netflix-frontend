@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { TVideoElement } from '@/components/ui/video-player/video.types'
+import { TVideoElement } from '@/shared/types/video.types'
 
 export const useVideo = () => {
 	const videoRef = useRef<TVideoElement>(null)

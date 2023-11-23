@@ -5,10 +5,9 @@ import { UserService } from 'service/user/user.service'
 import { useDebounce } from '@/hooks/other/useDebounce'
 
 import { AdminUsersUrl } from '@/shared/constants.enum'
+import { TSearch } from '@/shared/types/search.types'
 
 import { dateFormat } from '@/utils/date/date-format'
-
-import { TSearch } from './../../shared/types/search.types'
 
 export const useUsersTable = () => {
 	const queryClient = useQueryClient()

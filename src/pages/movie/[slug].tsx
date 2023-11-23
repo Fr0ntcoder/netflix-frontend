@@ -6,9 +6,8 @@ import { TMovie } from 'service/movie/movie.types'
 import Error404 from '@/screens/404'
 import SingleMovie from '@/screens/Movie/SingleMovie'
 
-import { TGallery } from '@/ui/Gallery/gallery.types'
-
 import { MovieUrl } from '@/shared/constants.enum'
+import { TGallery } from '@/shared/types/gallery'
 
 export type TMoviePage = {
 	movie: TMovie

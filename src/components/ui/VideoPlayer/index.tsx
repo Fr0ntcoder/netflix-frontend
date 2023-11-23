@@ -3,12 +3,12 @@ import { FC } from 'react'
 
 import Icon from '@/ui/Icon'
 import AuthPlaceholder from '@/ui/VideoPlayer/AuthPlaceholder'
-import { TVideoPlayer } from '@/ui/VideoPlayer/video.types'
 
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useVideo } from '@/hooks/video/useVideo'
 
 import { IClass } from '@/shared/interface/classname.interface'
+import { TVideoPlayer } from '@/shared/types/video.types'
 
 import styles from './VideoPlayer.module.scss'
 

@@ -6,10 +6,9 @@ import { MovieService } from 'service/movie/movie.service'
 import { useDebounce } from '@/hooks/other/useDebounce'
 
 import { AdminMoviesUrl } from '@/shared/constants.enum'
+import { TSearch } from '@/shared/types/search.types'
 
 import { parseGenres } from '@/utils/parse-genres'
-
-import { TSearch } from '../../shared/types/search.types'
 
 export const useMoviesTable = () => {
 	const { push } = useRouter()

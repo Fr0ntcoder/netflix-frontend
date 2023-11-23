@@ -1,10 +1,11 @@
 import { FC } from 'react'
 
 import CatalogMoviesItem from '@/ui/Catalog/CatalogMovies/CatalogMoviesItem'
-import { TCatalogMovie } from '@/ui/Catalog/CatalogMovies/catalog-movies.types'
 import Description from '@/ui/Description'
 import Heading from '@/ui/Heading'
 import Meta from '@/ui/Meta'
+
+import { TCatalogMovie } from '@/shared/types/catalog.types'
 
 import styles from './CatalogMovies.module.scss'
 

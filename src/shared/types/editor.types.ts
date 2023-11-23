@@ -1,6 +1,6 @@
 import { EditorProps } from 'draft-js'
 
-import { IFieldProps } from '@/ui/FormElements/InputField/input.types'
+import { IFieldProps } from '@/shared/types/input'
 
 type TypeEditorPropsField = EditorProps & IFieldProps
 export type TTextEditor = Omit<TypeEditorPropsField, 'editorState'> & {

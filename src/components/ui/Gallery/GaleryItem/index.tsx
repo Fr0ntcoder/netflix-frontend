@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
-import { TGallery } from '@/ui/Gallery/gallery.types'
+import { TGallery } from '@/shared/types/gallery.types'
 
 import styles from './GalleryItem.module.scss'
 

@@ -1,6 +1,6 @@
 import Actors from '@/screens/Admin/Actors'
 
-import { NextPageAuth } from '@/shared/types/auth.types'
+import { NextPageAuth } from '@/shared/types/auth'
 
 const ActorsPage: NextPageAuth = () => {
 	return <Actors />

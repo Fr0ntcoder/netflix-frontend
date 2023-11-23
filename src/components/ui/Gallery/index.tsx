@@ -2,9 +2,9 @@ import cn from 'classnames'
 import { FC } from 'react'
 
 import GalleryItem from '@/ui/Gallery/GaleryItem'
-import { TGallery } from '@/ui/Gallery/gallery.types'
 
 import { IClass } from '@/shared/interface/classname.interface'
+import { TGallery } from '@/shared/types/gallery.types'
 
 import styles from './Gallery.module.scss'
 

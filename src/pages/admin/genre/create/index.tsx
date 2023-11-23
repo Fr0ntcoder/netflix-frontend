@@ -1,6 +1,6 @@
 import GenreCreate from '@/screens/Admin/Genres/GenreCreate'
 
-import { NextPageAuth } from '@/shared/types/auth.types'
+import { NextPageAuth } from '@/shared/types/auth'
 
 const GenreCreatePage: NextPageAuth = () => {
 	return <GenreCreate />

@@ -1,7 +1,7 @@
 import { ControllerRenderProps } from 'react-hook-form'
 import { Options } from 'react-select'
 
-import { IFieldProps } from '@/ui/FormElements/InputField/input.types'
+import { IFieldProps } from '@/shared/types/input.types'
 
 export type TOption = {
 	value: string

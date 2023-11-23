@@ -1,5 +1,3 @@
-import { TAdminNavItem } from '@/ui/Admin/AdminNavigation/admin.nav.types'
-
 import {
 	AdminActorsUrl,
 	AdminGenresUrl,
@@ -7,6 +5,7 @@ import {
 	AdminUrl,
 	AdminUsersUrl,
 } from '@/shared/constants.enum'
+import { TAdminNavItem } from '@/shared/types/admin.types'
 
 export const AdminDataNav: TAdminNavItem[] = [
 	{

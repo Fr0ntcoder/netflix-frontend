@@ -1,6 +1,6 @@
 import ActorEdit from '@/screens/Admin/Actors/ActorEdit'
 
-import { NextPageAuth } from '@/shared/types/auth.types'
+import { NextPageAuth } from '@/shared/types/auth'
 
 const ActorEditPage: NextPageAuth = () => {
 	return <ActorEdit />

@@ -7,7 +7,7 @@ import { TypeComponentAuthField } from '@/shared/types/auth.types'
 
 const CheckRole: FC<TypeComponentAuthField> = ({
 	children,
-	Component: { isAdmin, isUser }
+	Component: { isAdmin, isUser },
 }) => {
 	const { user } = useAuth()
 	const router = useRouter()

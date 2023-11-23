@@ -2,7 +2,7 @@ import { FC } from 'react'
 import ReactSelect, { OnChangeValue } from 'react-select'
 import makeAnimated from 'react-select/animated'
 
-import { TOption, TSelect } from '@/ui/FormElements/Select/select.types'
+import { TOption, TSelect } from '@/shared/types/select.types'
 
 import styles from './Select.module.scss'
 

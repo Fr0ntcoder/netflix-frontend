@@ -5,9 +5,8 @@ import { TMovie } from 'service/movie/movie.types'
 
 import Home, { THome } from '@/screens/Home'
 
-import { TGallery } from '@/ui/Gallery/gallery.types'
-
 import { ActorUrl, MovieUrl } from '@/shared/constants.enum'
+import { TGallery } from '@/shared/types/gallery.types'
 
 const HomePage: NextPage<THome> = (props) => {
 	return <Home {...props} />

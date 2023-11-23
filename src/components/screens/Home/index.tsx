@@ -2,10 +2,11 @@ import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
 import Gallery from '@/ui/Gallery'
-import { TGallery } from '@/ui/Gallery/gallery.types'
 import Heading from '@/ui/Heading'
 import Meta from '@/ui/Meta'
 import Slider from '@/ui/Slider'
+
+import { TGallery } from '@/shared/types/gallery.types'
 
 import styles from './Home.module.scss'
 

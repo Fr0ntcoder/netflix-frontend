@@ -5,7 +5,7 @@ import { FC, useEffect, useState } from 'react'
 import { Editor } from 'react-draft-wysiwyg'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
-import { TTextEditor } from '@/ui/FormElements/TextEditor/text-editor.types'
+import { TTextEditor } from '@/shared/types/editor.types'
 
 import styles from './TextEditor.module.scss'
 
