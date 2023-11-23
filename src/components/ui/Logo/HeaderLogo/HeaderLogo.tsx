@@ -6,9 +6,9 @@ import MaterialIcon from '@/ui/MaterialIcon/MaterialIcon'
 
 import { IClass } from '@/shared/interface/classname.interface'
 
-import styles from './Logo.module.scss'
+import styles from './HeaderLogo.module.scss'
 
-const Logo: FC<IClass> = ({ className }) => {
+const HeaderLogo: FC<IClass> = ({ className }) => {
 	return (
 		<Link href="/" className={cn(styles.logo, className)}>
 			<MaterialIcon name="MdMovieCreation" />
@@ -21,4 +21,4 @@ const Logo: FC<IClass> = ({ className }) => {
 	)
 }
 
-export default Logo
+export default HeaderLogo
