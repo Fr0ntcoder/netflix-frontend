@@ -1,6 +1,6 @@
 import MovieEdit from '@/screens/Admin/Movies/MovieEdit'
 
-import { NextPageAuth } from '@/shared/types/auth'
+import { NextPageAuth } from '@/shared/types/auth.types'
 
 const MovieEditPage: NextPageAuth = () => {
 	return <MovieEdit />

@@ -1,6 +1,6 @@
 import MovieCreate from '@/screens/Admin/Movies/MovieCreate'
 
-import { NextPageAuth } from '@/shared/types/auth'
+import { NextPageAuth } from '@/shared/types/auth.types'
 
 const MovieCreatePage: NextPageAuth = () => {
 	return <MovieCreate />

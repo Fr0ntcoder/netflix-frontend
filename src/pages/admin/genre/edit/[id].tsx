@@ -1,6 +1,6 @@
 import GenreEdit from '@/screens/Admin/Genres/GenreEdit'
 
-import { NextPageAuth } from '@/shared/types/auth'
+import { NextPageAuth } from '@/shared/types/auth.types'
 
 const GerneEditPage: NextPageAuth = () => {
 	return <GenreEdit />
