@@ -1,4 +1,4 @@
-import Profile from '@/screens/Profile/Profile'
+import Profile from '@/screens/Profile'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

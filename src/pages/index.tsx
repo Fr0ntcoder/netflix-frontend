@@ -3,7 +3,7 @@ import { ActorService } from 'service/actor/actor.service'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
-import Home, { THome } from '@/screens/Home/Home'
+import Home, { THome } from '@/screens/Home'
 
 import { TGallery } from '@/ui/Gallery/gallery.types'
 

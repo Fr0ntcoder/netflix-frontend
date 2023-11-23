@@ -1,4 +1,4 @@
-import UserEdit from '@/screens/Admin/Users/UserEdit/UserEdit'
+import UserEdit from '@/screens/Admin/Users/UserEdit'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

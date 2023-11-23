@@ -1,4 +1,4 @@
-import GenreCreate from '@/screens/Admin/Genres/GenreCreate/GenreCreate'
+import GenreCreate from '@/screens/Admin/Genres/GenreCreate'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

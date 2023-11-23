@@ -14,7 +14,7 @@
 		"jsx": "preserve",
 		"incremental": true,
 		"baseUrl": "./src/",
-		"forceConsistentCasingInFileNames": false,
+		"forceConsistentCasingInFileNames": true,
 		"paths": {
 			"@/layout/*": ["components/layout/*"],
 			"@/ui/*": ["components/ui/*"],

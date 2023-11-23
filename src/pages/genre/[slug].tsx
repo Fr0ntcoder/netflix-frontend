@@ -5,7 +5,7 @@ import { TGenre } from 'service/genre/genre.types'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
-import CatalogMovies from '@/ui/Catalog/CatalogMovies/CatalogMovies'
+import CatalogMovies from '@/ui/Catalog/CatalogMovies'
 
 type TGenrePage = {
 	movies: TMovie[]

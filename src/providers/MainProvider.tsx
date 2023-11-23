@@ -5,7 +5,7 @@ import { FC } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 
-import Layout from '@/layout/Layout'
+import Layout from '@/layout/index'
 
 import { TypeComponentAuthField } from '@/shared/types/auth.types'
 

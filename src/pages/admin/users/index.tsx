@@ -1,4 +1,4 @@
-import Users from '@/screens/Admin/Users/Users'
+import Users from '@/screens/Admin/Users'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

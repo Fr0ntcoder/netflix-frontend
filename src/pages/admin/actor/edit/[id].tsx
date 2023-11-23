@@ -1,4 +1,4 @@
-import ActorEdit from '@/screens/Admin/Actors/ActorEdit/ActorEdit'
+import ActorEdit from '@/screens/Admin/Actors/ActorEdit'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
 

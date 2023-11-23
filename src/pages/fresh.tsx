@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import { MovieService } from 'service/movie/movie.service'
 import { TMovie } from 'service/movie/movie.types'
 
-import CatalogMovies from '@/ui/Catalog/CatalogMovies/CatalogMovies'
+import CatalogMovies from '@/ui/Catalog/CatalogMovies'
 
 const FreshPage: NextPage<{ movies: TMovie[] }> = ({ movies }) => {
 	return <CatalogMovies title="Новые фильмы" movies={movies} />
