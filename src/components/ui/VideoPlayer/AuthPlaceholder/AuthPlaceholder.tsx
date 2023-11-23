@@ -16,6 +16,7 @@ const AuthPlaceholder: FC<TAuthPlaceholder> = ({ slug }) => {
 				variant="h6"
 				className={styles.title}
 			/>
+
 			<AuthButton slug={slug} />
 		</div>
 	)
