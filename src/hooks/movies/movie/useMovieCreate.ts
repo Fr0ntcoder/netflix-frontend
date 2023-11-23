@@ -19,7 +19,7 @@ export const useMovieCreate = () => {
 				toastError(error, 'Этот фильм уже существует')
 			},
 			onSuccess() {
-				toastr.success('Обновление фильма', 'Вы успешно изменили фильм')
+				toastr.success('Создание фильма', 'Вы успешно создали фильм')
 				push(AdminMoviesUrl.ROOT)
 			},
 		}

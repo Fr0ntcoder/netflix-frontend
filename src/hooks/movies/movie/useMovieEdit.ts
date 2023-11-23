@@ -38,7 +38,7 @@ export const useMovieEdit = (setValue: UseFormSetValue<TMovieEditInput>) => {
 				toastError(error, 'Ошибка обновления')
 			},
 			onSuccess() {
-				toastr.success('Обновление фильма', 'Вы успешно изменили жанр фильма')
+				toastr.success('Обновление фильма', 'Вы успешно обновили фильм')
 				push(AdminMoviesUrl.ROOT)
 			},
 		}

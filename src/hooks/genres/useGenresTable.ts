@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
+import { toastr } from 'react-redux-toastr'
 import { GenreService } from 'service/genre/genre.service'
 
 import { useDebounce } from '@/hooks/other/useDebounce'
@@ -10,6 +11,7 @@ import { TSearch } from '@/shared/types/search.types'
 
 import { dateFormat } from '@/utils/date/date-format'
 import { trimText } from '@/utils/string/trim-text'
+import { toastError } from '@/utils/toast-error'
 
 export const useGenresTable = () => {
 	const { push } = useRouter()
@@ -46,6 +48,10 @@ export const useGenresTable = () => {
 		{
 			onSuccess: () => {
 				queryClient.invalidateQueries('genres table')
+				toastr.success('Удаление жанра', 'Вы успешно удалили жанр')
+			},
+			onError(error) {
+				toastError(error, 'Ошибка удаление жанра')
 			},
 		}
 	)

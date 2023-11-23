@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { TMovie } from 'service/movie/movie.types'
 
+import { MovieUrl } from '@/shared/constants.enum'
+
 import { FADE_IN } from '@/utils/animation/fade-in'
 
 import styles from './SearchList.module.scss'
@@ -12,9 +14,9 @@ type TSearchList = {
 	movies: TMovie[]
 }
 const SearchList: FC<TSearchList> = ({ movies }) => {
-	const list = movies.map(item => (
+	const list = movies.map((item) => (
 		<div className={styles.item} key={item._id}>
-			<Link href='/' className={styles.link}>
+			<Link href={`${MovieUrl.ROOT}/${item.slug}`} className={styles.link}>
 				<Image
 					src={item.poster}
 					width={50}

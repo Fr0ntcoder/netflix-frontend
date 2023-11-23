@@ -23,7 +23,7 @@ export const useUserEdit = (setValue: UseFormSetValue<TUserInput>) => {
 				setValue('isAdmin', data.isAdmin)
 			},
 			onError(error) {
-				toastError(error, 'Get user')
+				toastError(error, 'Ошибка получения пользователя')
 			},
 			enabled: !!query.id,
 		}
@@ -37,7 +37,10 @@ export const useUserEdit = (setValue: UseFormSetValue<TUserInput>) => {
 				toastError(error, 'Обновление')
 			},
 			onSuccess() {
-				toastr.success('Обновление', 'Вы успешно обновили!')
+				toastr.success(
+					'Обновление пользователя',
+					'Вы успешно обновили пользователя!'
+				)
 				push(AdminUsersUrl.ROOT)
 			},
 		}

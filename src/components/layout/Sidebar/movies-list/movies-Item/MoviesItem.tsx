@@ -12,18 +12,18 @@ type TMoviesItem = {
 const MoviesItem: FC<TMoviesItem> = ({ item }) => {
 	return (
 		<div className={styles.item}>
-			<Image src={item.poster} alt={item.title} width={80} height={90} />
+			<Image src={item.poster} alt={item.title} width={80} height={100} />
 			<div className={styles.content}>
 				<h4 className={styles.name}>{item.title}</h4>
 				<div className={styles.genre}>
-					{item.genres.map(genre => (
+					{item.genres.map((genre) => (
 						<span className={styles.text} key={genre._id}>
 							{item.genres.length > 1 ? `${genre.name}, ` : `${genre.name}`}
 						</span>
 					))}
 				</div>
 				<div className={styles.rating}>
-					<Icon name='MdStar' />
+					<Icon name="MdStar" />
 					<span>{item.rating.toFixed(1)}</span>
 				</div>
 			</div>

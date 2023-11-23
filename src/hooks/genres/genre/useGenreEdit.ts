@@ -25,7 +25,7 @@ export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
 				})
 			},
 			onError(error) {
-				toastError(error, 'Get genre')
+				toastError(error, 'Ошибка получения жанра')
 			},
 		}
 	)
@@ -38,7 +38,7 @@ export const useGenreEdit = (setValue: UseFormSetValue<TGenreEditInput>) => {
 				toastError(error, 'Ошибка обновления')
 			},
 			onSuccess() {
-				toastr.success('Update genre', 'Вы успешно изменили жанр фильма')
+				toastr.success('Обновление жанра', 'Вы успешно изменили жанр')
 				push(AdminGenresUrl.ROOT)
 			},
 		}

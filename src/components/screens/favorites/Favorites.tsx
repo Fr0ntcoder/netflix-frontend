@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FC } from 'react'
 
 import FavoriteItem from '@/components/screens/favorites/favorite-item/FavoriteItem'
@@ -8,6 +9,8 @@ import NotFound from '@/components/ui/not-found/NotFound'
 import { useAuth } from '@/hooks/auth/useAuth'
 import { useFavorites } from '@/hooks/users/user/useFavorites'
 
+import { AuthUrl } from '@/shared/constants.enum'
+
 import styles from './Favorites.module.scss'
 
 const Favorites: FC = () => {
@@ -17,12 +20,14 @@ const Favorites: FC = () => {
 		<FavoriteItem movie={movie} key={movie._id} />
 	))
 
-	if (!user) return null
-
 	return (
 		<Meta title="Избранное - фильмы">
 			<Heading title="Избранное" variant="h5" className={styles.title} />
-			{movies?.length === 0 ? (
+			{!user ? (
+				<Link href={AuthUrl.ROOT} className={styles.link}>
+					Авторизоваться
+				</Link>
+			) : movies?.length === 0 ? (
 				<NotFound text="Добавьте фильмы" />
 			) : (
 				<div className={styles.list}>{moviesList}</div>

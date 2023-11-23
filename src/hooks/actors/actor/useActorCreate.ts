@@ -19,7 +19,7 @@ export const useActorCreate = () => {
 				toastError(error, 'Этот актёр уже существует')
 			},
 			onSuccess() {
-				toastr.success('Обновление актёра', 'Вы успешно изменили актёра')
+				toastr.success('Создание актёра', 'Вы успешно создали актёра')
 				push(AdminActorsUrl.ROOT)
 			},
 		}

@@ -19,7 +19,7 @@ export const useGenreCreate = () => {
 				toastError(error, 'Этот жанр уже существует')
 			},
 			onSuccess() {
-				toastr.success('Обновление жанра', 'Вы успешно изменили жанр')
+				toastr.success('Добавить жанр', 'Вы успешно добавили жанр!')
 				push(AdminGenresUrl.ROOT)
 			},
 		}

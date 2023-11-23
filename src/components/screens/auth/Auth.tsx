@@ -11,9 +11,14 @@ const Auth: FC = () => {
 	useAuthRedirect()
 
 	return (
-		<Meta title='Авторизация'>
+		<Meta title="Авторизация">
 			<div className={styles.auth}>
 				<AuthForm />
+				<div className={styles.data}>
+					<span>Вход для администатора(для тестирования)</span>
+					<span>Email: admin@admin.ru</span>
+					<span>Пароль: 000000</span>
+				</div>
 			</div>
 		</Meta>
 	)

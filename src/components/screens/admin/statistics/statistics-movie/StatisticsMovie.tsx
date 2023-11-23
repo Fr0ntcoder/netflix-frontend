@@ -32,7 +32,7 @@ const StatisticsMovie: FC = () => {
 			<Heading variant="h5" title="Популярные фильмы" />
 			<span className={styles.count}>
 				Открыли {data[0].countOpened}
-				{decOfNum(data[0].countOpened, ['раз', 'раза', 'раз'])}
+				{` ${decOfNum(data[0].countOpened, [' раз', ' раза', 'раз'])}`}
 			</span>
 			<div className={styles.image}>
 				<Image

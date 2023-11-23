@@ -14,7 +14,7 @@ export const register = createAsyncThunk<TAuthReponse, TAuthData>(
 	async ({ email, password }, thunkApi) => {
 		try {
 			const response = await AuthService.register(email, password)
-			toastr.success('Registration', 'Регистрация прошла успешно!')
+			toastr.success('Регистрация', 'Регистрация прошла успешно!')
 
 			return response.data
 		} catch (error) {
@@ -30,7 +30,7 @@ export const login = createAsyncThunk<TAuthReponse, TAuthData>(
 	async ({ email, password }, thunkApi) => {
 		try {
 			const response = await AuthService.login(email, password)
-			toastr.success('Login', 'Вы успешно вошли!')
+			toastr.success('Войти', 'Вы успешно вошли!')
 			return response.data
 		} catch (error) {
 			toastError(error)
@@ -54,7 +54,7 @@ export const checkAuth = createAsyncThunk<TAuthReponse>(
 		} catch (error) {
 			if (errorCatch(error) === 'jwt expired') {
 				toastr.error(
-					'Logout',
+					'Выйти',
 					'Вы завершили авторизацию, пожалуйста зайдите снова!'
 				)
 				thunkApi.dispatch(logout())
