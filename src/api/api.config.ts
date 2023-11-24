@@ -6,8 +6,8 @@ import { AuthService } from 'service/auth/auth.service'
 
 import { IS_PRODUCTION } from './../shared/constants.enum'
 
-export const API_URL = `${process.env.APP_URL}`
-export const API_SERVER_URL = `${process.env.APP_SERVER_URL}`
+export const API_URL = `${process.env.APP_URL}/api`
+export const API_SERVER_URL = `${process.env.APP_SERVER_URL}/api`
 
 export const axiosDefault = axios.create({
 	baseURL: IS_PRODUCTION ? API_SERVER_URL : API_URL,
