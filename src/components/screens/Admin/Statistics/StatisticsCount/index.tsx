@@ -32,7 +32,7 @@ const StatisticsCount: FC = () => {
 				{decOfNum(data.length, [
 					'пользователь',
 					'пользователя',
-					'пользователя',
+					'пользователей',
 				])}
 			</span>
 		</div>
