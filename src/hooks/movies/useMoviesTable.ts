@@ -28,7 +28,7 @@ export const useMoviesTable = () => {
 						items: [
 							movie.title,
 							parseGenres(movie.genres),
-							String(movie.rating),
+							String(movie.rating.toFixed(1)),
 						],
 					})
 				),
