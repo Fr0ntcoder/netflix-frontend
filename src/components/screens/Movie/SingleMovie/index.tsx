@@ -2,8 +2,6 @@ import dynamic from 'next/dynamic'
 import { TMoviePage } from 'pages/movie/[slug]'
 import { FC } from 'react'
 
-import MovieContent from '@/screens/Movie/SingleMovie/MovieContent'
-
 import Banner from '@/ui/Banner'
 import Gallery from '@/ui/Gallery'
 import Heading from '@/ui/Heading'
@@ -19,13 +17,16 @@ const DynamicVideoPlayer = dynamic(() => import('@/ui/VideoPlayer'), {
 const DynamicMovieRating = dynamic(() => import('./MovieRating'), {
 	ssr: false,
 })
+const DynamicMovieContent = dynamic(() => import('./MovieContent'), {
+	ssr: false,
+})
 const SingleMovie: FC<TMoviePage> = ({ movie, similarMovies }) => {
 	useOpenedCount(movie.slug)
 
 	return (
 		<Meta title={movie.title}>
 			<Banner image={movie.bigPoster} className={styles.banner}>
-				<MovieContent content={movie} />
+				<DynamicMovieContent content={movie} />
 			</Banner>
 			<DynamicVideoPlayer
 				videoSource={movie.videoUrl}
